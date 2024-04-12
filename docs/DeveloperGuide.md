@@ -627,7 +627,6 @@ testers are expected to do more *exploratory* testing.
 1. Initial launch
 
    1. Download the jar file and copy into an empty folder
-
    2. Launch Match by running the jar file in your terminal. (java -jar Match.jar) 
 
       Expected: Shows the GUI with a set of sample volunteers. The window size may not be optimum.
@@ -832,7 +831,7 @@ testers are expected to do more *exploratory* testing.
         Launch Match through the terminal by running `java -jar Match.jar`
 
         Expected: Match launches but the lists are empty.
-   
+
 ## **Appendix: Planned Enhancements**
 
 ## **Appendix: Effort**
