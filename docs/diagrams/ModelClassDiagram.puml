@@ -61,4 +61,5 @@ Phone -[hidden]right-> Email
 Email -[hidden]right-> Availability
 
 ModelManager --> "~* filtered" Person
+ModelManager --> "~* filtered" Assignment
 @enduml

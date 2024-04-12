@@ -155,6 +155,23 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Add volunteer feature
+This feature allows the user to add a volunteer to the database and manage them.
+![AddSequenceDiagram](images/AddSequenceDiagram.png)
+
+Step 1. The user launches the application.
+
+Step 2. The user executes `add n/John Doe p/12345678 e/john@example.com` to add John Doe to Match.
+
+Step 3. `Logic Manager` will call `parseCommand(input)` to extract the parameters and pass it to `AddCommandParser`.
+
+Step 4. The `AddressBookParser` will call `AddCommandParser#parse(arguments)` to create a `AddCommand` which will be executed by the `Logic Manager`.
+
+Step 5. During the execution of `AddCommand`, a new Person is created and added.
+
+Step 6. A `CommandResult` is produced based on the status of the execution;success or not which will be returned to the `Logic Manager`.
+
+
 ### \[Proposed\] Copy emails to Clipboard feature
 
 #### Proposed Implementation
@@ -305,7 +322,7 @@ _{Explain here how the data archiving feature will be implemented}_
 - He is forgetful and often forgets the assignments he has made.
 - He has bad eyesight and cannot see small or low-contrast texts.
 
-**Value Proposition**:
+### Value Proposition:
 
 Match streamlines volunteer management, facilitating efficient scheduling and coordination of volunteers, ultimately saving time and resources for organizations focused on social impact. It helps Bob efficiently manage a diverse group of volunteers by tracking their availability.
 
@@ -328,52 +345,283 @@ Priority: High (must have) - `***`, Medium (nice to have) - `**`, Low (unlikely 
 
 **Use Cases**:
 
-**Use case: Add a Volunteer**
+**UC01: Add a Volunteer**
 
 **Actor**: Coordinator (Bob)
 
-**Precondition**: Coordinator has launched the application and is on the main screen.
+**Precondition**: User has launched the application and is on the main screen.
 
 **Main Success Scenario**:
-1. Coordinator adds a new volunteer.
-2. Coordinator is required to enter the volunteer's name, phone number, email and availability.
-3. Coordinator enters the required information in the correct format.
+1. User requests to add a new volunteer.
+2. User is required to enter the volunteer's name, phone number and email.
+3. User enters the required information in the correct format.
 4. The system validates the input and displays a confirmation message: "Volunteer [volunteer_name] has been added successfully."
 
-**Extensions**:
-3a. The coordinator enters invalid data for any of the fields.
-    3a1. The system displays an error message indicating the nature of the error (e.g., "[Parameter] is invalid," "[Parameter] is missing," "[Parameter] is specified multiple times").
-    3a2. The coordinator corrects the input and continues from step 3.
+Use Case ends.
 
-**Use case: Find a Volunteer's Information**
+**Extensions**:
+- 3a. The User enters invalid data for any of the fields.
+    - 3a1. The system displays an error message indicating the nature of the error (e.g., "[Parameter] is invalid," "[Parameter] is missing," "[Parameter] is specified multiple times").
+    - Use Case ends.
+
+**UC02: Find a Volunteer's Information**
 
 **Actor**: Coordinator (Bob)
 
-**Precondition**: Coordinator has launched the application and is on the main screen.
+**Precondition**: User has launched the application and is on the main screen.
 
 **Main Success Scenario**:
-1. Coordinator selects the "Find Volunteer" option.
-2. The system prompts the coordinator to enter the volunteer's name.
-3. Coordinator enters the volunteer's name (or a part of it).
-4. The system displays all volunteers whose names contain the entered keywords.
+1. User requests to find a volunteer via name or availability
+2. The system displays all volunteers whose names contain the entered keywords.
+
+Use Case ends.
 
 **Extensions**:
-4a. No volunteers match the entered name.
-    4a1. The system displays an error message: "No volunteers found."
+- 1a. User enters an invalid command.
+    - 1a1. Match shows an error message
+    - Use case ends.
 
-**Use case: View Entire List of Volunteers**
+- 1b. There are no volunteers in the address book.
+    - 1b1. The system displays a message: "There are no volunteers in the address book."
+    - Use case ends.
+
+**UC03: View Entire List of Volunteers**
 
 **Actor**: Coordinator (Bob)
 
-**Precondition**: Coordinator has launched the application and is on the main screen.
+**Precondition**: User has launched the application and is on the main screen.
 
 **Main Success Scenario**:
-1. Coordinator selects the "List Volunteers" option.
+1. User requests to view all volunteers
 2. The system displays the entire list of volunteers, along with their details, in the GUI.
 
+Use case ends.
+
 **Extensions**:
-2a. There are no volunteers in the address book.
-    2a1. The system displays a message: "There are no volunteers in the address book."
+- 1a. There are no volunteers in the address book.
+    - 1a1. The system displays a message: "There are no volunteers in the address book."
+    - Use case ends.
+
+**UC04: Remove a volunteer**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: Coordinator has launched the application and is on the main screen. There is also at least 1 volunteer in the app.
+
+**Main Success Scenario**:
+1. User requests to remove a volunteer from Match
+2. User enters the person to remove.
+3. Match asks for confirmation.
+4. User confirms deletion.
+5. The system displays a success message and removed the volunteer from the app.
+
+Use Case ends.
+
+**Extensions**:
+
+- 2a. User enters an invalid volunteer.
+  - 2a1. Match shows an error message
+  - Use case ends.
+
+- 3a. User cancels deletion
+  - 3a1. The system acknowledges the cancellation and does nothing.
+  - Use case ends.
+
+
+
+**UC05: Edit a volunteer's details**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: Coordinator has launched the application and is on the main screen. There is also at least 1 volunteer in the app.
+
+**Main Success Scenario**:
+1. User requests to edit a volunteer's details.
+2. User enters the new details
+3. The system displays a success message and updates the volunteer's details.
+
+Use Case ends.
+
+**Extensions**:
+
+- 1a. User enters an invalid volunteer.
+    - 1a1. Match shows an error message.
+    - Use case ends.
+
+- 2a. User enters invalid details.
+    - 2a1. Match shows an error message.
+    - Use case ends.
+
+**UC06: Add availability**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen. There is also at least 1 volunteer in the app.
+
+**Main Success Scenario**:
+1. User requests to add an availability to an existing volunteer.
+2. User enters the availability.
+3. The system displays a success message and updates the volunteer's availability.
+
+Use Case ends.
+
+**Extensions**:
+
+- 1a. User enters an invalid volunteer.
+    - 1a1. Match shows an error message.
+    - Use case ends.
+
+- 2a. User enters invalid availability.
+    - 2a1. Match shows an error message.
+    - Use case ends.
+
+
+**UC07: Remove availability**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen. There is also at least 1 volunteer in the app.
+
+**Main Success Scenario**:
+1. User requests to remove an availability from an existing volunteer.
+2. User enters the availability to be removed.
+3. The system displays a success message and updates the volunteer's availability.
+
+Use Case ends.
+
+**Extensions**:
+
+- 1a. User enters an invalid volunteer.
+    - 1a1. Match shows an error message.
+    - Use case ends.
+
+- 2a. User enters invalid availability.
+    - 2a1. Match shows an error message.
+    - Use case ends.
+- 2b. User enters a valid availability but volunteer does not have that availability.
+    - 2b1. Match shows an error message.
+    - Use case ends.
+
+**UC08: Assign a volunteer to an activity**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen. There is also at least 1 volunteer with at least 1 availability in the app.
+
+**Main Success Scenario**:
+1. User assigns a volunteer to an activity on a date.
+2. User enters the details of the assignment and availability
+3. The system displays a success message and creates an assignment with that volunteer.
+
+Use Case ends.
+
+**Extensions**:
+
+- 1a. User enters an invalid volunteer.
+    - 1a1. Match shows an error message.
+    - Use case ends.
+
+- 2a. User enters invalid availability.
+    - 2a1. Match shows an error message.
+    - Use case ends.
+- 2b. User enters a valid availability but volunteer is not available.
+    - 2b1. Match shows an error message.
+    - Use case ends.
+- 2c. User enters invalid details
+  - 2c1. Match shows an error message.
+  - Use case ends.
+
+**UC09: View the list of assignments**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen. There is also at least one assignment.
+
+**Main Success Scenario**:
+1. User requests to view the list of assignments
+2. The system displays a success message and shows the list of assignments.
+
+Use Case ends.
+
+**UC10: Delete assignments**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen. There is also at least 1 volunteer in the app.
+
+**Main Success Scenario**:
+1. User requests to delete an assignment
+2. The system displays a success message and updates the assignment list.
+
+Use Case ends.
+
+**Extensions**:
+
+- 1a. User enters an invalid assignment.
+    - 1a1. Match shows an error message.
+    - Use case ends.
+
+**UC11: Reset all data**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen.
+
+**Main Success Scenario**:
+1. User requests to clear all data entry in the system
+2. The system displays a success message and updates the lists.
+
+Use Case ends.
+
+**UC12: Remove all availabilities before a certain date**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen.
+
+**Main Success Scenario**:
+1. User requests to clear all availabilities before a date.
+2. The system displays a success message and updates all the persons and assignments.
+
+Use Case ends.
+
+**Extensions**:
+
+- 1a. User enters an invalid availability.
+    - 1a1. Match shows an error message.
+    - Use case ends.
+- 1b. User enters an availability with no volunteers having any availabilities before that.
+  - 1b1. Match shows an error message.
+  - Use case ends.
+  
+
+**UC13: Copy all emails of the current volunteer list**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen.
+
+**Main Success Scenario**:
+1. User requests to copy all emails.
+2. The system displays a success message and emails are copied to user's clipboard.
+
+Use Case ends.
+
+**UC14: Export data to csv file**
+
+**Actor**: Coordinator (Bob)
+
+**Precondition**: User has launched the application and is on the main screen.
+
+**Main Success Scenario**:
+1. User requests to export all data.
+2. The system displays a success message and the data is exported to a csv file.
+
+Use Case ends.
+
+    
+
+
 
 ### Non-Functional Requirements
 
@@ -404,16 +652,19 @@ testers are expected to do more *exploratory* testing.
 
    1. Download the jar file and copy into an empty folder
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+   2. Launch Match by running the jar file in your terminal. (java -jar Match.jar) 
+   
+      Expected: Shows the GUI with a set of sample volunteers. The window size may not be optimum.
 
-1. Saving window preferences
+2. Saving window preferences
 
    1. Resize the window to an optimum size. Move the window to a different location. Close the window.
 
    1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
+3. Exit Application
+   1. While in Match,
 
 ### Deleting a person
 
