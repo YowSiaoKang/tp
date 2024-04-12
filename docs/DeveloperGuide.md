@@ -28,7 +28,7 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ### Architecture
 
-<img src="images/ArchitectureDiagram.png" width="280" />
+![ArchitectureDiagram](images/ArchitectureDiagram.png)
 
 The ***Architecture Diagram*** given above explains the high-level design of the App.
 
@@ -36,7 +36,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 **Main components of the architecture**
 
-**`Main`** (consisting of classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
+**`Main`** (consisting of classes [`Main`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/Main.java) and [`MainApp`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/MainApp.java)) is in charge of the app launch and shut down.
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
 * At shut down, it shuts down the other components and invokes cleanup methods where necessary.
 
@@ -53,7 +53,7 @@ The bulk of the app's work is done by the following four components:
 
 The *Sequence Diagram* below shows how the components interact with each other for the scenario where the user issues the command `delete 1`.
 
-<img src="images/ArchitectureSequenceDiagram.png" width="574" />
+![ArchitectureSequenceDiagram](images/ArchitectureSequenceDiagram.png)
 
 Each of the four main components (also shown in the diagram above),
 
@@ -62,13 +62,13 @@ Each of the four main components (also shown in the diagram above),
 
 For example, the `Logic` component defines its API in the `Logic.java` interface and implements its functionality using the `LogicManager.java` class which follows the `Logic` interface. Other components interact with a given component through its interface rather than the concrete class (reason: to prevent outside component's being coupled to the implementation of a component), as illustrated in the (partial) class diagram below.
 
-<img src="images/ComponentManagers.png" width="300" />
+![ComponentManagers](images/ComponentManagers.png)
 
 The sections below give more details of each component.
 
 ### UI component
 
-The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+The **API** of this component is specified in [`Ui.java`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
@@ -85,11 +85,11 @@ The `UI` component,
 
 ### Logic component
 
-**API** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+**API** : [`Logic.java`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
-<img src="images/LogicClassDiagram.png" width="550"/>
+![LogicClassDiagram](images/LogicClassDiagram.png)
 
 The sequence diagram below illustrates the interactions within the `Logic` component, taking `execute("delete 1")` API call as an example.
 
@@ -108,16 +108,16 @@ How the `Logic` component works:
 
 Here are the other classes in `Logic` (omitted from the class diagram above) that are used for parsing a user command:
 
-<img src="images/ParserClasses.png" width="600"/>
+![ParserClasses](images/ParserClasses.png)
 
 How the parsing works:
 * When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
-**API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+**API** : [`Model.java`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/model/Model.java)
 
-<img src="images/ModelClassDiagram.png" width="450" />
+![ModelDiagram](images/ModelClassDiagram.png)
 
 
 The `Model` component,
@@ -127,18 +127,40 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Person` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Person` needing their own `Tag` objects.<br>
-
-<img src="images/BetterModelClassDiagram.png" width="450" />
-
+<div markdown="span" class="alert alert-info">:information_source: 
+**Note:**The focus of the above class diagram is on the Person and Assignment classes as well as the relevant lists that contain them. More details will be provided in below.<br>
 </div>
+
+### Person Component
+**API** : [`Person.java`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/model/person/Person.java)
+
+![PersonDiagram](images/PersonClassDiagram.png)
+
+The `Person` component stores the data of a volunteer which are:
+- `Name` which is compulsory
+- `Phone` which is compulsory
+- `Email` which is compulsory
+- `Availability` which is optional
+- `Tag` which is optional
+
+
+### Assignment component
+**API** : [`Assignment.java`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/model/assignment/Assignment.java)
+
+![AssignmentDiagram](images/AssignmentClassDiagram.png)
+
+The `Assignment` component contains the information of the assignment:
+- `Person` which refers to the person assigned and is compulsory
+- `Availability` which refers to the date assigned and is compulsory
+- `AssignmentDetails` which contains the details of the assignment and is compulsory
+
+
 
 
 ### Storage component
+**API** : [`Storage.java`](https://github.com/AY2324S2-CS2103T-F10-4/tp/blob/master/src/main/java/seedu/address/storage/Storage.java)
 
-**API** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
-
-<img src="images/StorageClassDiagram.png" width="550" />
+![StorageClassDiagram](images/StorageClassDiagram.png)
 
 The `Storage` component,
 * can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
@@ -159,22 +181,51 @@ This section describes some noteworthy details on how certain features are imple
 This feature allows the user to add a volunteer to the database and manage them.
 ![AddSequenceDiagram](images/AddSequenceDiagram.png)
 
-Step 1. The user launches the application.
+1. The user launches the application.
 
-Step 2. The user executes `add n/John Doe p/12345678 e/john@example.com` to add John Doe to Match.
+2. The user executes `add n/John Doe p/12345678 e/john@example.com` to add John Doe to Match.
 
-Step 3. `Logic Manager` will call `parseCommand(input)` to extract the parameters and pass it to `AddCommandParser`.
+3. `Logic Manager` will call `AddressBookParser#parseCommand(input)` to extract the parameters and pass it to `AddCommandParser`
 
-Step 4. The `AddressBookParser` will call `AddCommandParser#parse(arguments)` to create a `AddCommand` which will be executed by the `Logic Manager`.
+4. The `AddressBookParser` will call `AddCommandParser#parse(arguments)` to create a `AddCommand` which will be executed by the `Logic Manager`.
 
-Step 5. During the execution of `AddCommand`, a new Person is created and added.
+5. During the execution of `AddCommand`, a new Person is created and added to the model.
 
-Step 6. A `CommandResult` is produced based on the status of the execution;success or not which will be returned to the `Logic Manager`.
+6. A `CommandResult` is produced based on the status of the execution;success or not which will be returned to the `Logic Manager`.
 
 
-### \[Proposed\] Copy emails to Clipboard feature
+### Find volunteer feature
+This feature allows the user to filter through the volunteer list based on names and availabilities.
+![AddSequenceDiagram](images/FindSequenceDiagram.png)
 
-#### Proposed Implementation
+1. The user launches the application.
+
+2. The user executes `find n/alex` to find all users with the name alex inside.
+
+3. `Logic Manager` will call `AddressBookParser#parseCommand(input)` to extract the parameters and pass it to `FindCommandParser`
+
+4. The `AddressBookParser` will call `FindCommandParser#parse(arguments)` to create a `FindCommand` which will be executed by the `Logic Manager`.
+
+5. During the execution of `FindCommand`, it will call `Model#updateFilterPersonList(predicate)` to update the person list to only show people with the name alex in it.
+
+6. A `CommandResult` is produced based on the status of the execution;success or not which will be returned to the `Logic Manager`.
+
+
+### Assign volunteer feature
+This feature allows the user to assign a volunteer to an volunteering activity.
+![AssignActivityDiagram](images/AssignActivityDiagram.png)
+
+1. The user launches the application.
+2. The user executes `assign 1 d/Willing Hearts a/01/03/2024` to assign the volunteer at index 1.
+3. `Logic Manager` will then call `AddressBookParser#parseCommand(input)` to parse the input and pass it to `AddAssignmentCommandParser`.
+4. `AddAssignmentCommandParser` will check for valid `AssignmentDetails` , `Availability` and `AssignedPerson`.
+5. Then, it creates a `AddAssignmentCommand` object which will be executed.
+6. During execution, it will check whether a volunteer is available on that day, and if he/she already has an existing assignment on that day.
+7. It will then finally check for any duplicate assignments.
+8. After all these checks, the `Assignment` is then created and added to the application.
+
+###  Copy emails to Clipboard feature
+
 
 This feature allows a user to first filter the list using the find command (eg. specific names or availabilities), before copying all the emails to the clipboard (seperated by commas), so that they can be easily contacted.
 
@@ -190,9 +241,7 @@ The following sequence diagram shows how a copy operation goes through the Logic
 
 ![CopySequenceDiagram](images/CopySequenceDiagram-Logic.png)
 
-### \[Proposed\] Exporting to CSV
-
-#### Proposed Implementation
+### Exporting to CSV
 
 The proposed exporting mechanism allows a user to export to a more popular and human-readable format. Comma-separated values (CSV) are widely used for data exchange and also for analytics.
 
@@ -208,93 +257,7 @@ The following sequence diagram shows how an export operation goes through the Lo
 
 ![ExportSequenceDiagram](images/ExportSequenceDiagram-Logic.png)
 
-### \[Proposed\] Undo/redo feature
 
-#### Proposed Implementation
-
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `addressBookStateList` and `currentStatePointer`. Additionally, it implements the following operations:
-
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
-
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
-
-Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
-
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
-
-![UndoRedoState0](images/UndoRedoState0.png)
-
-Step 2. The user executes `delete 5` command to delete the 5th person in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `addressBookStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
-
-![UndoRedoState1](images/UndoRedoState1.png)
-
-Step 3. The user executes `add n/David …​` to add a new person. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `addressBookStateList`.
-
-![UndoRedoState2](images/UndoRedoState2.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `addressBookStateList`.
-
-</div>
-
-Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
-
-![UndoRedoState3](images/UndoRedoState3.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</div>
-
-The following sequence diagram shows how an undo operation goes through the `Logic` component:
-
-![UndoSequenceDiagram](images/UndoSequenceDiagram-Logic.png)
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</div>
-
-Similarly, how an undo operation goes through the `Model` component is shown below:
-
-![UndoSequenceDiagram](images/UndoSequenceDiagram-Model.png)
-
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `addressBookStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-</div>
-
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `addressBookStateList` remains unchanged.
-
-![UndoRedoState4](images/UndoRedoState4.png)
-
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `addressBookStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
-
-![UndoRedoState5](images/UndoRedoState5.png)
-
-The following activity diagram summarizes what happens when a user executes a new command:
-
-<img src="images/CommitActivityDiagram.png" width="250" />
-
-#### Design considerations:
-
-**Aspect: How undo & redo executes:**
-
-* **Alternative 1 (current choice):** Saves the entire address book.
-  * Pros: Easy to implement.
-  * Cons: May have performance issues in terms of memory usage.
-
-* **Alternative 2:** Individual command knows how to undo/redo by
-  itself.
-  * Pros: Will use less memory (e.g. for `delete`, just save the person being deleted).
-  * Cons: We must ensure that the implementation of each individual command are correct.
-
-_{more aspects and alternatives to be added}_
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -340,6 +303,7 @@ Priority: High (must have) - `***`, Medium (nice to have) - `**`, Low (unlikely 
 | `***` | coordinator | find volunteers by name | quickly locate a specific volunteer's information |
 | `**` | coordinator | view a list of all volunteers | have an overview of all registered volunteers |
 | `**` | coordinator | find volunteers by availability | match volunteers with beneficiaries based on their availability |
+| `**` | coordinator | assign volunteers to a task | match volunteers |
 | `*` | coordinator | use a GUI with large fonts and high contrast | easily view information with my bad eyesight |
 | `*` | coordinator | use keyboard shortcuts | reduce typing due to my carpal tunnel |
 
@@ -664,29 +628,236 @@ testers are expected to do more *exploratory* testing.
        Expected: The most recent window size and location is retained.
 
 3. Exit Application
-   1. While in Match,
+   1. While in Match, click on the `File` button and press `Exit`.
+   
+      Expected: The application will now close.
 
-### Deleting a person
 
-1. Deleting a person while all persons are being shown
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+### Viewing Help
+1. While in Match, click on the `Help` button and press `Help`. Then press on `Copy URL`.
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+   Expected: This will copy the link to our UserGuide to your clipboard. Simply paste the link into any browser and view our UserGuide.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+### Adding a volunteer
+1. Add a new volunteer
+   1. Test Case: `add n/John Doe p/12345678 e/john@example.com`
+   
+        Expected: Volunteer with the name "John Doe", phone number "12345678", email "john@example.com" is added
+   2. Test Case: `add n/John Doe p/12345678 e/john@example.com a/01/03/2024`
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+        Expected: Same as previous but now with an availability of 01/03/2024.
+   3. Test Case: `add n/John Doe p/12345678 e/john@example.com t/Teaching`
 
-1. _{ more test cases …​ }_
+        Expected: Same as test case 1 but with the extra tag of "Teaching".
+   4. Test Case: `add [any duplicated name, phone, email]`
 
+        Expected: Error thrown, stating no duplicate names, phones, emails are allowed.
+
+### Viewing the list of volunteers
+1. List all volunteers
+   1. Test Case: `list`
+        
+        Expected: The list of all volunteers are shown
+   2. Test Case: `list [any extra keywords]`
+
+        Expected: Same as previous testcase.
+
+### Find a volunteers by his/her name or availability.
+1. Filters through the list based on the search criteria
+   1. Test Case: `find n/Alex`
+
+        Expected: A list of volunteers showing all volunteers with "Alex" in  their names.
+   2. Test Case: `find a/01/03/2024`
+
+        Expected: A list of volunteers showing all volunteer who are available on "01/03/2024".
+   3. Test Case: `find n/Alex a/01/03/2024`
+
+        Expected: A list of volunteers showing all volunteers who are available on "01/03/2024" or with "Alex" in their names.
+   4. Test Case: `find`
+
+        Expected: Error thrown, stating that at least one search criterion must be present.
+### Removing a volunteer
+1. Remove a volunteer from the application based on the volunteer list
+   1. Prerequisites: There must be at least one volunteer present in the current list.
+   2. Test Case: `delete 1` then enter `y`
+
+        Expected: A prompt is given to confirm your deletion. After entering `y`, the volunteer at index `1` is removed.
+   3. Test Case: `delete 0` or `delete [negative number]`
+
+        Expected: Error thrown as delete command expects a positive integer as its argument.
+   4. Test Case: `delete [number greater than the size of list]`
+
+        Expected: A prompt is given to confirm deletion. After entering `y`, error is thrown as there is no volunteer at that index.
+
+### Editing a volunteer's details
+1. Edit a volunteer
+   1. Prerequisites: There must be at least one volunteer present in the current list.
+   2. Test Case: `edit 1 n/John`
+
+        Expected: The volunteer's name at index `1` is now changed to "John".
+   3. Test Case: `edit 1 p/12345678`
+
+        Expected: The volunteer's phone number at index `1` is now changed to "12345678".
+   4. Test Case: `edit 1`
+
+        Expected: Error thrown, stating that at least one field must be present to edit.
+   5. Test Case: `edit 1 t/`
+
+        Expected: Clears all tags of the volunteer.
+    
+
+### Adding availability to a volunteer
+1. Add an availability to a volunteer
+   1. Prerequisites: There must be at least one volunteer present in the current list.
+   2. Test Case: `addavail 1 a/01/03/2024`
+
+        Expected: Availability is added to the volunteer at index `1`.
+   3. Test Case: `addavail 1`
+
+        Expected: Error thrown, stating that availability must be present.
+   4. Test Case: `addavail 1 [existing availability]`
+
+        Expected: Error thrown, stating that the volunteer is already available.
+   5. Test Case: `addavail 1 [invalid date]`
+
+        Expected: Error thrown, stating that availability must be a valid date.
+
+
+### Removing an availability from a volunteer.
+1. Removes an availability from a volunteer
+   1. Prerequisites: There must be at least one volunteer present in the current list.
+   2. Test Case: `removeavail 1 [existing availability]`
+        
+        Expected: The availability is removed from the volunteer at index `1`.
+   3. Test Case: `removeavail 1 [any availability that the volunteer does not have]`
+
+        Expected: Error thrown, stating that the volunteer does not have that availability.
+
+### Refresh the application
+1. Removes all availabilities before today.
+   1. Test Case: `refresh`
+
+        Expected: All availabilities before today are removed.
+   2. Test Case: `refresh [extra inputs]`
+
+        Expected: Same as previous.
+
+### Assign a volunteer
+1. Assigns a volunteer to an assignment.
+   1. Prerequisites: There must be at least one available volunteer present in the current list.
+   2. Test Case: `assign 1 d/Willing Hearts a/[Existing availability which is not assigned]`
+        
+        Expected: A new assignment is created with the assigned person at index 1.
+   3. Test Case: `assign 1 d/Willing Hearts a/[any availability that the volunteer does not have]`
+
+        Expected: Error thrown, stating that the volunteer is not available on that day.
+   4. Test Case: `assign 1 d/Willing Hearts a/[a date where the volunteer already has an assignment]`
+
+        Expected: Error thrown, stating that the volunteer is already assigned 1 task on that day.
+   5. Test Case: `assign [missing parameters]`
+
+        Expected: Error thrown, stating invalid command format.
+   6. Test Case: `assign d/ a/[Existing availability]`
+
+        Expected: Error thrown, stating that details cannot be empty.
+    
+### View list of assignments
+1. Views the list of every assignment.
+   1. Test Case: `lista`
+
+        Expected: The list of all assignments is shown on the GUI.
+   2. Test Case: `lista [extra inputs`
+
+        Expected: Same as previous.
+
+### Remove assignments
+1. Removes assignment based on the assignment list. (This is similar to deleting volunteers without confirmation.)
+   1. Prerequisites: There must be at least one assignment in the assignment list.
+   2. Test Case: `removeassign 1`
+
+        Expected: Removes the assignment at index 1 of the assignment list.
+   3. Test Case: `removeassign 0` or `removeassign [negative numbers]`
+
+        Expected: Error thrown, stating invalid command format.
+
+
+### Clear all data
+1. Removes all data from the application
+   1. Test Case: `clear`
+
+        Expected: Removes all entries(volunteers and assignments) in the application.
+   2. Test Case: `clear [extra inputs]`
+
+        Expected: Same as previous.
+
+
+### Copy emails of the person list.
+1. Copy emails of every volunteer in the current volunteer list.
+   1. Test Case: `copy`
+            
+        Expected: All emails in the current volunteer list are copied to your clipboard.
+   2. Test Case: `copy [extra keywords]`
+
+        Expected: Same as previous.
+
+### Export data
+1. Exports the current data in the application to a csv file.
+   1. Test Case: `export` when the addressbook.json file exists.
+
+        Expected: All data is exported to a csv file named "assignments.csv" and "persons.csv" in the data directory.
+   2. Test Case: `export` when the addressbook.json file does not exist.
+
+        Expected: Error thrown, stating that the json file could not be found.
+   3. Test Case: `export [extra inputs]`
+
+        Expected: Same as the above 2, depending on whether json file exists.
 ### Saving data
 
 1. Dealing with missing/corrupted data files
 
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
+   1. Edit `addressbook.json` such that that stored values no longer make sense. For example: Changing a volunteer's details while not changing the assignment details.
+   2. Launch Match through the terminal by running `java -jar Match.jar`
 
-1. _{ more test cases …​ }_
+        Expected: Match launches but the lists are empty.
+   
+
+## **Appendix: Planned Enhancements**
+
+## **Appendix: Effort**
+
+### **Difficulty Level**
+Developing Match was somewhat challenging and difficult as we planned features that were not easy to implement.
+Not only do we have to plan the features, we had to understand the initial AB3 application and how it worked.
+Furthermore, most of us have not worked in a team before, hence coordinating issues and pull requests were time-consuming.
+
+### **Challenges Faced**
+
+Here are some of the challenges the team faced:
+- Making a new panel list showing all assignments
+  - We are new to Java FX and figuring out how to switch views were difficult. To build this feature, we had to make sure that our assignments feature worked first which took a long time.
+- Handling dependency issues between `Assignment` and `Person`
+  - As we created a new entity `Assignment`, we had to ensure that any edits to a `Person` will also cascade update the assignments.
+  - For example, editing a volunteer's details will also be reflected in the Assignment information.
+  - This was time consuming to fix as we have to consider all scenarios where this dependency is violated.
+- Making the autocomplete box
+  - Making the dropdown box is challenging as we had to utilise the javafx library and use their `ComboBox` and `SelectionModel`. To integrate this, we had to read their javadocs and understand them.
+  - In the process of implementing this, we faced many bugs such as arrow keys not working properly to navigate and dropdown box appearing at the wrong times.
+
+### **Effort Required**
+Although some commands implemented were similar to AB3's command and can be reused, we implemented new features and commands to make sure that our application looks and feels different from the original AB3.
+
+
+Furthermore, AB3 only deals with 1 type of entity `Person`, but in our application, we implemented a new entity `Assignment` to capture the assignments assigned to volunteers.
+Handling dependency issue between `Person` and `Assignments` were also challenging and required time to test and fix.
+
+
+Hence, a considerable amount of time and effort were put to develop these features and ensure proper testing.
+
+### **Achievements**
+We built a simple application meant for volunteer coordinators to manage their volunteer roster.
+
+- With the assignment feature, coordinators can keep track of all assignments assigned to volunteers.
+- With autocomplete feature, this can significantly reduce the typing needed to maintain their database.
+- With export feature, volunteer coordinators can save their files as backup or share with their colleagues.
+- With copy feature, volunteer coordinators can easily send out emails to check with volunteers if they want a particular volunteering activity.
