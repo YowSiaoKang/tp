@@ -140,6 +140,9 @@ public class MainWindow extends UiPart<Stage> {
         }
     }
 
+    //@@author Benson15912 - reused and modified
+    //Reused from https://github.com/AY2324S1-CS2103T-W08-4/tp
+    // with minor modifications
     /**
      * Sets the display of the panel between Assignments and Person
      * @param display
@@ -159,6 +162,7 @@ public class MainWindow extends UiPart<Stage> {
         }
     }
 
+    //@@author
     /**
      * Opens the help window or focuses on it if it's already opened.
      */
