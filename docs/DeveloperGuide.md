@@ -544,26 +544,18 @@ Use Case ends.
 
 Use Case ends.
 
-**UC12: Remove all availabilities before a certain date**
+**UC12: Remove all availabilities before today**
 
 **Actor**: Coordinator (Bob)
 
 **Precondition**: User has launched the application and is on the main screen.
 
 **Main Success Scenario**:
-1. User requests to clear all availabilities before a date.
-2. The system displays a success message and updates all the persons and assignments.
+1. User requests to clear all availabilities before today.
+2. The system displays a success message and updates all the persons and assignments accordingly.
 
 Use Case ends.
 
-**Extensions**:
-
-- 1a. User enters an invalid availability.
-    - 1a1. Match shows an error message.
-    - Use case ends.
-- 1b. User enters an availability with no volunteers having any availabilities before that.
-  - 1b1. Match shows an error message.
-  - Use case ends.
   
 
 **UC13: Copy all emails of the current volunteer list**
@@ -589,6 +581,12 @@ Use Case ends.
 2. The system displays a success message and the data is exported to a csv file.
 
 Use Case ends.
+
+**Extensions**:
+
+- 1a. Addressbook.json file does not exist
+    - 1a1. Match shows an error message.
+    - Use case ends.
 
     
 
