@@ -216,12 +216,19 @@ This feature allows the user to assign a volunteer to an volunteering activity.
 ![AssignActivityDiagram](images/AssignActivityDiagram.png)
 
 1. The user launches the application.
+
 2. The user executes `assign 1 d/Willing Hearts a/01/03/2024` to assign the volunteer at index 1.
+
 3. `Logic Manager` will then call `AddressBookParser#parseCommand(input)` to parse the input and pass it to `AddAssignmentCommandParser`.
+
 4. `AddAssignmentCommandParser` will check for valid `AssignmentDetails` , `Availability` and `AssignedPerson`.
+
 5. Then, it creates a `AddAssignmentCommand` object which will be executed.
+
 6. During execution, it will check whether a volunteer is available on that day, and if he/she already has an existing assignment on that day.
+
 7. It will then finally check for any duplicate assignments.
+
 8. After all these checks, the `Assignment` is then created and added to the application.
 
 ###  Copy emails to Clipboard feature
