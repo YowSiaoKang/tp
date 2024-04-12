@@ -829,7 +829,8 @@ testers are expected to do more *exploratory* testing.
 1. Dealing with missing/corrupted data files
 
    1. Edit `addressbook.json` such that that stored values no longer make sense. For example: Changing a volunteer's details while not changing the assignment details.
-   2. Launch Match through the terminal by running `java -jar Match.jar`
+    
+        Launch Match through the terminal by running `java -jar Match.jar`
 
         Expected: Match launches but the lists are empty.
    
