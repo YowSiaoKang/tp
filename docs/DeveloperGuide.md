@@ -603,6 +603,13 @@ Use Case ends.
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Volunteer**: An individual who offers their time and services for various activities or tasks.
+* **Coordinator**: An employee who manages volunteers and assignments in a volunteer organisation.
+* **Availability**:  Refers to the days during which a volunteer is available to participate in activities.
+* **AssignmentDetails**: Information related to a specific assignment, such as the task description or location.
+* **UI**: Abbreviation for User Interface, the visual interface through which users interact with the application.
+* **API**: Abbreviation for Application Programming Interface, which defines the interactions between different components of the application.
+* **CSV**: Abbreviation for Comma-Separated Values, a file format used for storing tabular data.
 
 --------------------------------------------------------------------------------------------------------------------
 
