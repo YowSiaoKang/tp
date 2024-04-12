@@ -127,7 +127,7 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: 
+<div markdown="span" class="alert alert-info">:information_source:
 **Note:**The focus of the above class diagram is on the Person and Assignment classes as well as the relevant lists that contain them. More details will be provided in below.<br>
 </div>
 
@@ -556,7 +556,7 @@ Use Case ends.
 
 Use Case ends.
 
-  
+
 
 **UC13: Copy all emails of the current volunteer list**
 
@@ -588,7 +588,7 @@ Use Case ends.
     - 1a1. Match shows an error message.
     - Use case ends.
 
-    
+
 
 
 
@@ -629,7 +629,7 @@ testers are expected to do more *exploratory* testing.
    1. Download the jar file and copy into an empty folder
 
    2. Launch Match by running the jar file in your terminal. (java -jar Match.jar) 
-   
+
       Expected: Shows the GUI with a set of sample volunteers. The window size may not be optimum.
 
 2. Saving window preferences
@@ -641,7 +641,7 @@ testers are expected to do more *exploratory* testing.
 
 3. Exit Application
    1. While in Match, click on the `File` button and press `Exit`.
-   
+
       Expected: The application will now close.
 
 
@@ -654,7 +654,7 @@ testers are expected to do more *exploratory* testing.
 ### Adding a volunteer
 1. Add a new volunteer
    1. Test Case: `add n/John Doe p/12345678 e/john@example.com`
-   
+
         Expected: Volunteer with the name "John Doe", phone number "12345678", email "john@example.com" is added
    2. Test Case: `add n/John Doe p/12345678 e/john@example.com a/01/03/2024`
 
@@ -669,7 +669,7 @@ testers are expected to do more *exploratory* testing.
 ### Viewing the list of volunteers
 1. List all volunteers
    1. Test Case: `list`
-        
+
         Expected: The list of all volunteers are shown
    2. Test Case: `list [any extra keywords]`
 
@@ -717,7 +717,6 @@ testers are expected to do more *exploratory* testing.
    5. Test Case: `edit 1 t/`
 
         Expected: Clears all tags of the volunteer.
-    
 
 ### Adding availability to a volunteer
 1. Add an availability to a volunteer
@@ -740,7 +739,7 @@ testers are expected to do more *exploratory* testing.
 1. Removes an availability from a volunteer
    1. Prerequisites: There must be at least one volunteer present in the current list.
    2. Test Case: `removeavail 1 [existing availability]`
-        
+
         Expected: The availability is removed from the volunteer at index `1`.
    3. Test Case: `removeavail 1 [any availability that the volunteer does not have]`
 
@@ -759,7 +758,7 @@ testers are expected to do more *exploratory* testing.
 1. Assigns a volunteer to an assignment.
    1. Prerequisites: There must be at least one available volunteer present in the current list.
    2. Test Case: `assign 1 d/Willing Hearts a/[Existing availability which is not assigned]`
-        
+
         Expected: A new assignment is created with the assigned person at index 1.
    3. Test Case: `assign 1 d/Willing Hearts a/[any availability that the volunteer does not have]`
 
@@ -773,7 +772,7 @@ testers are expected to do more *exploratory* testing.
    6. Test Case: `assign d/ a/[Existing availability]`
 
         Expected: Error thrown, stating that details cannot be empty.
-    
+
 ### View list of assignments
 1. Views the list of every assignment.
    1. Test Case: `lista`
@@ -807,7 +806,7 @@ testers are expected to do more *exploratory* testing.
 ### Copy emails of the person list.
 1. Copy emails of every volunteer in the current volunteer list.
    1. Test Case: `copy`
-            
+
         Expected: All emails in the current volunteer list are copied to your clipboard.
    2. Test Case: `copy [extra keywords]`
 
@@ -829,12 +828,11 @@ testers are expected to do more *exploratory* testing.
 1. Dealing with missing/corrupted data files
 
    1. Edit `addressbook.json` such that that stored values no longer make sense. For example: Changing a volunteer's details while not changing the assignment details.
-    
+
         Launch Match through the terminal by running `java -jar Match.jar`
 
         Expected: Match launches but the lists are empty.
    
-
 ## **Appendix: Planned Enhancements**
 
 ## **Appendix: Effort**
