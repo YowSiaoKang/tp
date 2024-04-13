@@ -31,19 +31,19 @@ public class UniquePersonList implements Iterable<Person> {
     /**
      * Returns true if the list contains an equivalent person as the given argument.
      */
-    public boolean contains(Person toCheck) {
+    public boolean containsExactPerson(Person toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSamePerson);
+        return internalList.stream().anyMatch(toCheck::equals);
     }
 
     /**
      * Returns true if the list contains an equivalent person as the given argument.
      */
-    public boolean containsExactPerson(Person toCheck) {
+    public boolean contains(Person toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::equals);
+        return internalList.stream().anyMatch(toCheck::isSamePerson);
     }
-    
+
     /**
      * Returns true if the list contains a person with the same phone number as the given argument.
      */

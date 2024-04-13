@@ -83,8 +83,7 @@ public class AddressBook implements ReadOnlyAddressBook {
                     a.getAvailability());
             if (after.getAvailabilities().contains(a.getAvailability())) {
                 this.assignments.setAssignment(a, editedAssignment);
-            }
-            else {
+            } else {
                 this.assignments.remove(a);
             }
         }
