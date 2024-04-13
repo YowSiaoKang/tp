@@ -116,6 +116,14 @@ Edits an existing person in the address book.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY] [t/TAG]…​`
 
+<div markdown="block" class="alert alert-info">
+
+**:information_source: Take note:**<br>
+
+- Editing a person's availability will automatically remove the assignment the person is assigned to.
+
+</div>
+
 - Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
 - At least one of the optional fields must be provided.
 - Existing values will be updated to the input values.
@@ -218,6 +226,8 @@ Format: `delete INDEX`
 - As delete is deemed as a critical operation, you will see a confirmation message.
 
 - Do not panic, entering `y` following it will delete proceed to delete the specified entry, while entering anything else will default to cancelling the operation.
+
+- Deleting a person will result the person assigned to an assignment to be deleted as well.
 
 </div>
 
@@ -380,6 +390,10 @@ Autocomplete provides suggestions based on your command history as you type. You
 ### Saving the data
 
 Match data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+
+### Data cascading
+
+As `persons` and `assignments` list are related performing actions on one of the lists will result changes to be cascaded to ensure data consistency.
 
 ### Editing the data file
 
