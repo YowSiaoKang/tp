@@ -348,11 +348,11 @@ Use Case ends.
 Use Case ends.
 
 **Extensions**:
-- 1a. User enters an invalid command.
+- 2a. User enters an invalid command.
     - 1a1. Match shows an error message
     - Use case ends.
 
-- 1b. There are no volunteers in the address book.
+- 2b. There are no volunteers in the address book.
     - 1b1. The system displays a message: "There are no volunteers in the address book."
     - Use case ends.
 
@@ -369,8 +369,8 @@ Use Case ends.
 Use case ends.
 
 **Extensions**:
-- 1a. There are no volunteers in the address book.
-    - 1a1. The system displays a message: "There are no volunteers in the address book."
+- 2a. There are no volunteers in the address book.
+    - 2a1. The system displays a message: "There are no volunteers in the address book."
     - Use case ends.
 
 **UC04: Remove a volunteer**
@@ -381,23 +381,21 @@ Use case ends.
 
 **Main Success Scenario**:
 1. User requests to remove a volunteer from Match
-2. User enters the person to remove.
-3. Match asks for confirmation.
-4. User confirms deletion.
-5. The system displays a success message and removed the volunteer from the app.
+2. Match asks for confirmation.
+3. User confirms deletion.
+4. The system displays a success message and removed the volunteer from the app.
 
 Use Case ends.
 
 **Extensions**:
 
-- 2a. User enters an invalid volunteer.
-  - 2a1. Match shows an error message
-  - Use case ends.
-
 - 3a. User cancels deletion
   - 3a1. The system acknowledges the cancellation and does nothing.
   - Use case ends.
 
+- 5a. User enters an invalid volunteer.
+    - 5a1. Match shows an error message
+    - Use case ends.
 
 
 **UC05: Edit a volunteer's details**
@@ -408,19 +406,18 @@ Use Case ends.
 
 **Main Success Scenario**:
 1. User requests to edit a volunteer's details.
-2. User enters the new details
-3. The system displays a success message and updates the volunteer's details.
+2. The system displays a success message and updates the volunteer's details.
 
 Use Case ends.
 
 **Extensions**:
 
-- 1a. User enters an invalid volunteer.
-    - 1a1. Match shows an error message.
+- 2a. User enters an invalid volunteer.
+    - 2a1. Match shows an error message.
     - Use case ends.
 
-- 2a. User enters invalid details.
-    - 2a1. Match shows an error message.
+- 2b. User enters invalid details.
+    - 2b1. Match shows an error message.
     - Use case ends.
 
 **UC06: Add availability**
@@ -431,19 +428,18 @@ Use Case ends.
 
 **Main Success Scenario**:
 1. User requests to add an availability to an existing volunteer.
-2. User enters the availability.
-3. The system displays a success message and updates the volunteer's availability.
+2. The system displays a success message and updates the volunteer's availability.
 
 Use Case ends.
 
 **Extensions**:
 
-- 1a. User enters an invalid volunteer.
-    - 1a1. Match shows an error message.
+- 2a. User enters an invalid volunteer.
+    - 2a1. Match shows an error message.
     - Use case ends.
 
-- 2a. User enters invalid availability.
-    - 2a1. Match shows an error message.
+- 2b. User enters invalid availability.
+    - 2b1. Match shows an error message.
     - Use case ends.
 
 
@@ -455,22 +451,21 @@ Use Case ends.
 
 **Main Success Scenario**:
 1. User requests to remove an availability from an existing volunteer.
-2. User enters the availability to be removed.
-3. The system displays a success message and updates the volunteer's availability.
+2. The system displays a success message and updates the volunteer's availability.
 
 Use Case ends.
 
 **Extensions**:
 
-- 1a. User enters an invalid volunteer.
-    - 1a1. Match shows an error message.
-    - Use case ends.
-
-- 2a. User enters invalid availability.
+- 2a. User enters an invalid volunteer.
     - 2a1. Match shows an error message.
     - Use case ends.
-- 2b. User enters a valid availability but volunteer does not have that availability.
+
+- 2b. User enters invalid availability.
     - 2b1. Match shows an error message.
+    - Use case ends.
+- 2c. User enters a valid availability but volunteer does not have that availability.
+    - 2c1. Match shows an error message.
     - Use case ends.
 
 **UC08: Assign a volunteer to an activity**
@@ -488,18 +483,18 @@ Use Case ends.
 
 **Extensions**:
 
-- 1a. User enters an invalid volunteer.
-    - 1a1. Match shows an error message.
+- 3a. User enters an invalid volunteer.
+    - 3a1. Match shows an error message.
     - Use case ends.
 
-- 2a. User enters invalid availability.
-    - 2a1. Match shows an error message.
+- 3b. User enters invalid availability.
+    - 3b1. Match shows an error message.
     - Use case ends.
-- 2b. User enters a valid availability but volunteer is not available.
-    - 2b1. Match shows an error message.
+- 3c. User enters a valid availability but volunteer is not available.
+    - 3c1. Match shows an error message.
     - Use case ends.
-- 2c. User enters invalid details
-  - 2c1. Match shows an error message.
+- 3d. User enters invalid details
+  - 3d1. Match shows an error message.
   - Use case ends.
 
 **UC09: View the list of assignments**
@@ -528,8 +523,8 @@ Use Case ends.
 
 **Extensions**:
 
-- 1a. User enters an invalid assignment.
-    - 1a1. Match shows an error message.
+- 2a. User enters an invalid assignment.
+    - 2a1. Match shows an error message.
     - Use case ends.
 
 **UC11: Reset all data**
@@ -584,8 +579,8 @@ Use Case ends.
 
 **Extensions**:
 
-- 1a. Addressbook.json file does not exist
-    - 1a1. Match shows an error message.
+- 2a. Addressbook.json file does not exist
+    - 2a1. Match shows an error message.
     - Use case ends.
 
 
@@ -639,7 +634,7 @@ testers are expected to do more *exploratory* testing.
        Expected: The most recent window size and location is retained.
 
 3. Exit Application
-   1. While in Match, click on the `File` button and press `Exit`.
+   1. While in Match, type `exit` in the command box and enter.
 
       Expected: The application will now close.
 
@@ -777,7 +772,7 @@ testers are expected to do more *exploratory* testing.
    1. Test Case: `lista`
 
         Expected: The list of all assignments is shown on the GUI.
-   2. Test Case: `lista [extra inputs`
+   2. Test Case: `lista [extra inputs]`
 
         Expected: Same as previous.
 
