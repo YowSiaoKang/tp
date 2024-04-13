@@ -46,6 +46,18 @@ public class JsonAdaptedAssignment {
      * @throws IllegalValueException if there were any data constraints violated in the adapted person.
      */
     public Assignment toModelType() throws IllegalValueException {
+        if (person == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Person.class.getSimpleName()));
+        }
+        if (availability == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Availability.class.getSimpleName()));
+        }
+        if (details == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    AssignmentDetails.class.getSimpleName()));
+        }
+
         final Person modelPerson = person.toModelType();
         final Availability modelAvailability = availability.toModelType();
         final AssignmentDetails modelDetails = new AssignmentDetails(details);

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
-
+import seedu.address.commons.exceptions.IllegalValueException;
 
 public class JsonAdaptedAssignmentTest {
 
@@ -29,7 +29,7 @@ public class JsonAdaptedAssignmentTest {
         JsonAdaptedAssignment assignment =
                 new JsonAdaptedAssignment(null, VALID_ASSIGNMENT_DETAILS, availabilityStub);
         // person cannot be null
-        assertThrows(NullPointerException.class, assignment::toModelType);
+        assertThrows(IllegalValueException.class, assignment::toModelType);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class JsonAdaptedAssignmentTest {
         JsonAdaptedAssignment assignment =
                 new JsonAdaptedAssignment(personStub, VALID_ASSIGNMENT_DETAILS, null);
         // person cannot be null
-        assertThrows(NullPointerException.class, assignment::toModelType);
+        assertThrows(IllegalValueException.class, assignment::toModelType);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class JsonAdaptedAssignmentTest {
         JsonAdaptedAssignment assignment =
                 new JsonAdaptedAssignment(personStub, null, availabilityStub);
         // person cannot be null
-        assertThrows(NullPointerException.class, assignment::toModelType);
+        assertThrows(IllegalValueException.class, assignment::toModelType);
     }
 
     private class JsonAdaptedPersonStub extends JsonAdaptedPerson {

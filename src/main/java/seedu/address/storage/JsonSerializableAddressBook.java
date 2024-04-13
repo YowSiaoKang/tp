@@ -21,6 +21,8 @@ import seedu.address.model.person.Person;
 public class JsonSerializableAddressBook {
 
     public static final String MESSAGE_DUPLICATE_PERSON = "Persons list contains duplicate person(s).";
+    public static final String MESSAGE_NULL_PERSON = "Persons list contains null.";
+    public static final String MESSAGE_NULL_ASSIGNMENT = "Assignment list contains null.";
 
     public static final String PERSONS_PROPERTY = "persons";
     public static final String ASSIGNMENTS_PROPERTY = "assignments";
@@ -57,6 +59,9 @@ public class JsonSerializableAddressBook {
     public AddressBook toModelType() throws IllegalValueException {
         AddressBook addressBook = new AddressBook();
         for (JsonAdaptedPerson jsonAdaptedPerson : persons) {
+            if (jsonAdaptedPerson == null) {
+                throw new IllegalValueException(MESSAGE_NULL_PERSON);
+            }
             Person person = jsonAdaptedPerson.toModelType();
             if (addressBook.hasPerson(person)) {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
@@ -64,6 +69,9 @@ public class JsonSerializableAddressBook {
             addressBook.addPerson(person);
         }
         for (JsonAdaptedAssignment jsonAdaptedAssignment: assignments) {
+            if (jsonAdaptedAssignment == null) {
+                throw new IllegalValueException(MESSAGE_NULL_ASSIGNMENT);
+            }
             Assignment assignment = jsonAdaptedAssignment.toModelType();
             addressBook.addAssignment(assignment);
         }
