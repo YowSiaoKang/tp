@@ -87,6 +87,30 @@ If you can type fast, Match can get your contact management tasks done faster th
 Adds a person to the address book.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY] [t/TAG]…​`
+- NAME
+  - Only accepts spaces and alphanumeric characters.
+  - Does not allow for duplication. You will be not allowed to add 2 volunteers with the 'same' name. the following points will explain what is considered 'same'.
+  - For flexibility, upper and lower cases are considered distinct. <br>
+  e.g. `Bob` and `bob` are considered 2 different entities.
+  - The number of spaces entered will be registered. <br>
+  e.g. `John[space]Doe` is different from `John[space][space]Doe`.
+- PHONE_NUMBER
+  - Only accepts numbers.
+  - Must be at least 3 digits in length.
+  - Does not allow for duplication.
+- EMAIL
+  - Format: `[local-part]@[domain-name]`
+  - local-part:
+    - Accepts special characters `+_.-` in addition to alphanumeric characters. 
+    - Nevertheless, special characters must not be consecutive and local-part cannot begin or end with a special character.
+  - domain-name:
+    - Domain labels (cannot be empty), separated by `.`, make up the domain name. <br>
+    e.g. `example.com`is valid while `example..com` is not valid.
+    - Domain label can only be alphanumeric characters, separated by a single hyphen (if any). However, ending domain label should not contain any hyphens.
+    - Ending domain label needs to include a minimum of two characters.
+- AVAILABILITY - please refer to [addavail](#adding-availabilities--addavail).
+- TAG
+  - Only accepts spaces and alphanumeric characters.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 
@@ -98,7 +122,8 @@ A person can have any number of tags and any number of availabilities (including
 
 **:information_source: Take note:**<br>
 
-You can use tags of any length, but tags that are longer than 25 characters will be truncated when they are shown.
+- You can use tags of any length, but tags that are longer than 25 characters will be truncated when they are shown.
+- Similarly, phone numbers and emails that are too long (more than ~ 40 characters) will be truncated.
 
 </div>
 
