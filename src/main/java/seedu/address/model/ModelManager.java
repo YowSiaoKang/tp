@@ -145,6 +145,20 @@ public class ModelManager implements Model {
         addressBook.setPerson(target, editedPerson);
     }
 
+    @Override
+    public void cascadeUpdateAssignments(Person target, Person editedPerson) {
+        requireAllNonNull(target, editedPerson);
+
+        addressBook.cascadeDeleteAssignments(target, editedPerson);
+    }
+
+    @Override
+    public void cascadeUpdateAssignments(Person toDelete) {
+        requireNonNull(toDelete);
+
+        addressBook.cascadeDeleteAssignments(toDelete);
+    }
+
     //=========== Filtered Person List Accessors =============================================================
 
     /**

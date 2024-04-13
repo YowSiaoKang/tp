@@ -2,11 +2,13 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.assignment.Assignment;
+import seedu.address.model.assignment.AssignmentDetails;
 import seedu.address.model.assignment.AssignmentList;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Person;
@@ -62,6 +64,52 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Cascade delete assignments when a person that has been assigned to has been deleted.
+     *
+     * @param before is a person to be deleted
+     */
+    public void cascadeDeleteAssignments(Person before, Person after) {
+        requireNonNull(before);
+        requireNonNull(after);
+
+        List<Assignment> assignmentsToChange = new ArrayList<>();
+        for (Assignment a : assignments) {
+            if (a.getPerson().equals(before)) {
+                assignmentsToChange.add(a);
+            }
+        }
+        for (Assignment a : assignmentsToChange) {
+            Assignment editedAssignment = new Assignment(after, new AssignmentDetails(a.getDetails()),
+                    a.getAvailability());
+            if (after.getAvailabilities().contains(a.getAvailability())) {
+                this.assignments.setAssignment(a, editedAssignment);
+            }
+            else {
+                this.assignments.remove(a);
+            }
+        }
+    }
+
+    /**
+     * Cascade delete assignments when a person that has been assigned to has been deleted.
+     *
+     * @param toDelete is a person to be deleted
+     */
+    public void cascadeDeleteAssignments(Person toDelete) {
+        requireNonNull(toDelete);
+
+        List<Assignment> assignmentsToDelete = new ArrayList<>();
+        for (Assignment a : assignments) {
+            if (a.getPerson().equals(toDelete)) {
+                assignmentsToDelete.add(a);
+            }
+        }
+        for (Assignment a : assignmentsToDelete) {
+            this.assignments.remove(a);
+        }
+    }
+
+    /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
     public void resetData(ReadOnlyAddressBook newData) {
@@ -78,7 +126,17 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasPerson(Person person) {
         requireNonNull(person);
+
         return persons.contains(person);
+    }
+
+    /**
+     * Returns true if a person with the same identity as {@code person} exists in the address book.
+     */
+    public boolean hasExactPerson(Person person) {
+        requireNonNull(person);
+
+        return persons.containsExactPerson(person);
     }
 
     /**
@@ -86,6 +144,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasPhone(Phone phone) {
         requireNonNull(phone);
+
         return persons.contains(phone);
     }
 
@@ -94,6 +153,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasEmail(Email email) {
         requireNonNull(email);
+
         return persons.contains(email);
     }
 
@@ -102,6 +162,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasAssignment(Assignment assignment) {
         requireNonNull(assignment);
+
         return assignments.contains(assignment);
     }
 
@@ -122,6 +183,9 @@ public class AddressBook implements ReadOnlyAddressBook {
 
 
 
+    /**
+     * Removes an assignment to the application.
+     */
     public void removeAssignment(Assignment key) {
         assignments.remove(key);
     }
