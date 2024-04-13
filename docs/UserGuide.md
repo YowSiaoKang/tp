@@ -40,7 +40,7 @@ If you can type fast, Match can get your contact management tasks done faster th
 
    - `list` : Lists all contacts.
 
-   - `add n/John Doe p/98765432 e/johnd@example.com a/25/05/2025` : Adds a contact named `John Doe` to the Address Book.
+   - `add n/John Doe p/98765432 e/johnd@example.com a/25/05/2025` : Adds a contact named `John Doe` to the volunteer contacts.
 
    - `delete 3` : Deletes the 3rd contact shown in the current list.
 
@@ -67,10 +67,10 @@ If you can type fast, Match can get your contact management tasks done faster th
   e.g. in `add n/NAME`, `add` is a command which should be in lower-case.
 
 - Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
+  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/elderly` or as `n/John Doe`.
 
 - Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/elderly`, `t/climate t/hospital` etc.
 
 - Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
@@ -84,9 +84,9 @@ If you can type fast, Match can get your contact management tasks done faster th
 
 ### Adding a person: `add`
 
-Adds a person to the address book.
+Adds a person to the volunteer contacts.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY] [t/TAG]…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`
 - NAME
   - Only accepts spaces and alphanumeric characters.
   - Does not allow for duplication. You will be not allowed to add 2 volunteers with the 'same' name. the following points will explain what is considered 'same'.
@@ -130,23 +130,29 @@ A person can have any number of tags and any number of availabilities (including
 Examples:
 
 - `add n/John Doe p/98765432 e/johnd@example.com a/22/05/2024`
-- `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/25/05/2024 p/1234567 t/criminal`
+- `add n/Betsy Crowe t/elderly e/betsycrowe@example.com a/25/05/2024 p/1234567 t/wildlife`
 
 What you should see:
 ![add](images/features/add.png)
 
 ### Editing a person : `edit`
 
-Edits an existing person in the address book.
+Edits an existing person in the volunteer contacts.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY] [t/TAG]…​`
-
+Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​`
 - Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
 - At least one of the optional fields must be provided.
-- Existing values will be updated to the input values.
-- When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
-- You can remove all the person’s tags by typing `t/` without
-  specifying any tags after it.
+- Existing values will be updated to the input values if they are valid.
+
+<div markdown="block" class="alert alert-info">
+
+**:information_source: Take note:**<br>
+
+- When editing tags, the existing tags of the person will be removed i.e editing of tags is not cumulative. <br>
+  e.g. `edit 1 t/newTag` will result a single tag `newTag` for volunteer at index 1.
+- You can remove all the person’s tags by typing `t/` without specifying any tags after it.
+
+</div>
 
 Examples:
 
@@ -159,13 +165,13 @@ What you should see:
 
 ### Adding availabilities : `addavail`
 
-Adds availabilities to the address book.
+Adds available dates to a volunteer.
 
 Format: `addavail INDEX a/AVAILABILITY`
-
-- Adds to person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
-- Availability must be in the format of DD/MM/YYYY eg: 28/03/2024
-- Availability must be not be present at the index in order to add.
+- Adds availabilities to person at the specified `INDEX`. This index refers to the index number shown in the displayed person list. <br>
+  The index **must be a positive integer** 1, 2, 3, …​
+- Availability must be in the format of DD/MM/YYYY e.g. `28/03/2024`.
+- Duplicate availability for one volunteer is not allowed.
 
 Examples:
 
@@ -177,12 +183,12 @@ What you should see:
 
 ### Removing availabilities : `removeavail`
 
-Removes availabilities from the address book.
+Removes available dates from a volunteer.
 
 Format: `removeavail INDEX a/AVAILABILITY`
 
-- Removes from person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
-- Availability must be in the format of DD/MM/YYYY eg: 28/03/2024
+- Removes availabilities from person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+- Availability must be in the format of DD/MM/YYYY e.g. `28/03/2024`.
 - Availability must be present at the index in order to remove.
 
 Examples:
@@ -193,7 +199,7 @@ Examples:
 <div markdown="block" class="alert alert-warning">
 :exclamation: **Caution:**
 In this version of Match, removing an availability will not delete assignments tagged to that deleted availability.
-This is mainly for record-keeping purposes.
+This is mainly for record-keeping purposes. TOOOO BEEEEEE UPDATEDDDDDDD
 </div>
 
 What you should see:
@@ -201,7 +207,7 @@ What you should see:
 
 ### Listing all persons : `list`
 
-Shows a list of all persons in the address book.
+Shows a list of all persons in the volunteer contacts.
 
 Format: `list`
 
@@ -232,7 +238,7 @@ What you should see:
 
 ### Deleting a person : `delete`
 
-Deletes the specified person from the address book.
+Deletes the specified person from the volunteer contacts.
 
 Format: `delete INDEX`
 
@@ -252,7 +258,7 @@ Format: `delete INDEX`
 
 Examples:
 
-- `list` followed by `delete 2` deletes the 2nd person in the address book.
+- `list` followed by `delete 2` deletes the 2nd person in the volunteer contacts.
 - `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
 
 <div markdown="block" class="alert alert-warning">
@@ -262,7 +268,7 @@ In this version of Match, deleting a person will not delete his/her assignments.
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all volunteer entries from the volunteer contacts.
 
 Format: `clear`
 
@@ -278,7 +284,7 @@ Format: `clear`
 
 ### Assigning volunteers : `assign`
 
-Adds an assignment to the address book.
+Adds an assignment to a volunteer.
 
 Format: `assign INDEX d/ASSIGNMENTDETAILS a/AVAILABILITY`
 
@@ -303,7 +309,7 @@ What you should see:
 
 ### Listing all assignments : `lista`
 
-Shows a list of all assignments in the address book.
+Shows a list of all assignments.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 To switch back to volunteer list, type `list`
@@ -324,7 +330,7 @@ Examples:
 
 ### Refreshing availabilities : `refresh`
 
-Remove outdated availabilities based on current date from address book.
+Remove any outdated availabilities based on the today's date from volunteer contacts.
 
 Format: `refresh`
 
@@ -348,7 +354,7 @@ Format: `copy`
 
 Examples:
 
-- `list` followed by `copy` copies all email addresses in the address book.
+- `list` followed by `copy` copies all email addresses in the app.
 - `find n/john` followed by `copy` copies the email addresses of people whose names contain "john".
 
 What you should see:
@@ -410,7 +416,8 @@ Match data are saved in the hard disk automatically after any command that chang
 
 Match data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+<div markdown="span" class="alert alert-warning">
+:exclamation: **Caution:**
 If your changes to the data file makes its format invalid, Match will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
