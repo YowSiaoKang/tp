@@ -54,6 +54,24 @@ If you can type fast, Match can get your contact management tasks done faster th
 
 <div style="page-break-after: always;"></div>
 
+## Structure of Match
+
+Match offers two distinct list.
+
+### Volunteer List
+Volunteer list is the default list, displaying all volunteers and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
+
+image
+
+### Assignment List
+Assignment list is the alternate tab that displays all assignments. This view helps you manage all of your assignments.
+
+image
+
+---
+
+<div style="page-break-after: always;"></div>
+
 ## Features
 
 <div markdown="block" class="alert alert-info">
@@ -207,7 +225,7 @@ What you should see:
 
 ### Listing all volunteers : `list`
 
-Shows a list of all volunteers in the volunteer contacts.
+Displays the [volunteer list](#volunteer-list) with all volunteer contacts.
 
 Format: `list`
 
@@ -216,9 +234,9 @@ What you should see:
 
 ### Locating volunteers by name: `find`
 
-Find people whose names contain any of the given name, availability or keywords.
+Finds and displays a filtered volunteer list containing volunteers matching the search.
 
-Format: `find KEYWORD [n/NAME] [a/AVAILABILITY] [MORE_KEYWORDS]`
+Format: `find [n/NAME]… [a/AVAILABILITY]…`
 
 - The search is case-insensitive. e.g `hans` will match `Hans`
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
@@ -230,8 +248,8 @@ Examples:
 
 - `find n/John` returns `john`, `John`, `John Doe` and so on...
 - `find n/alex david` returns `Alex Yeoh`, `David Li`<br>
-- `find a/23/05/2024` returns people who are available on 23/05/2024
-- find a/23/05/2024 a/24/05/2024 returns people who are available on either 23/05/2024 or 24/05/2024
+- `find a/23/05/2024` returns volunteers who are available on 23/05/2024
+- find a/23/05/2024 a/24/05/2024 returns volunteers who are available on either 23/05/2024 or 24/05/2024
 
 What you should see:
 ![find](images/features/find.png)
@@ -336,7 +354,7 @@ Format: `refresh`
 
 ### Copying emails : `copy`
 
-Copies the email addresses of all people in the currently filtered list to the clipboard.
+Copies the email addresses of all volunteers in the currently filtered list to the clipboard.
 
 <div markdown="block" class="alert alert-info">
 
@@ -346,7 +364,7 @@ Copies the email addresses of all people in the currently filtered list to the c
 
 - The email addresses will be copied in a comma-separated format, e.g. `john@example.com, jane@example.com, ...`.
 
-- If there are no people in the filtered list, an error message will be shown.
+- An error message will appear if the filtered volunteer list contains no volunteers.
 
 </div>
 
@@ -355,7 +373,7 @@ Format: `copy`
 Examples:
 
 - `list` followed by `copy` copies all email addresses in the app.
-- `find n/john` followed by `copy` copies the email addresses of people whose names contain "john".
+- `find n/john` followed by `copy` copies the email addresses of volunteers whose names contain "john".
 
 What you should see:
 ![copy](images/features/copy.png)
