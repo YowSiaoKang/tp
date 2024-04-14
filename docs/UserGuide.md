@@ -98,12 +98,12 @@ A person can have any number of tags and any number of availabilities (including
 
 **:information_source: Take note:**<br>
 
-- Tag(s) added can be of any length, but tags that are longer than 25 characters will be truncated when they are shown. 
-- Tag(s) added should not contain any special characters.
+- Phone Number added should only contain numbers, and it should be at least 3 digits long.
 - Email added should be of format local-part@domain. `local-part` contains only alphanumeric characters and these special characters excluding parentheses (+_.-).
 `domain` is made up of domain labels and it must end with a label at least 2 character long. 
-Each domain label must start and end with alphanumeric characters. 
-
+Each domain label must start and end with alphanumeric characters.
+- Tag(s) added can be of any length, but tags that are longer than 25 characters will be truncated when they are shown.
+- Tag(s) added should not contain any special characters.
 
 </div>
 
@@ -127,7 +127,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY] [t/TAG]…​`
 - When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 - You can remove all the person’s tags by typing `t/` without
   specifying any tags after it.
-- Constraints for tag(s) and email are similar to that of `add` command.
+- Constraints for email, phone number and tag(s) are similar to that of `add` command.
 
 Examples:
 
