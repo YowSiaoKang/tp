@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.TypicalAssignments.FOODDONATION;
 import static seedu.address.testutil.TypicalAssignments.FOODDONATIONCOPY;
-import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.DANIEL;
 
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +30,7 @@ public class AssignmentTest {
 
     @Test
     public void getPersonTest() {
-        Person assignedPerson = ALICE;
+        Person assignedPerson = DANIEL;
         assertEquals(FOODDONATION.getPerson(), assignedPerson);
     }
 
@@ -51,7 +51,7 @@ public class AssignmentTest {
         Availability availability = new Availability("14/02/2024");
         AssignmentDetails details = new AssignmentDetails("Food Donation");
         String result = new ToStringBuilder(FOODDONATION)
-                .add("Volunteer", ALICE)
+                .add("Volunteer", DANIEL)
                 .add("Date", availability)
                 .add("Details", details)
                 .toString();

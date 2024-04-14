@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.Messages.MESSAGE_CONFIRMATION;
-import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.DANIEL;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +19,7 @@ public class ConfirmationTest {
     public void assertNoConfirmation() {
         Confirmation confirmation;
 
-        confirmation = new Confirmation(new AddCommand(ALICE));
+        confirmation = new Confirmation(new AddCommand(DANIEL));
         assertTrue(confirmation.isToProceed());
 
         // different command -> return true

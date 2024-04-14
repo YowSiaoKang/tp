@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_AVAILABILITY_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_ELDERCARE;
 import static seedu.address.testutil.Assert.assertThrows;
-import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.DANIEL;
 import static seedu.address.testutil.TypicalPersons.BENSON;
 import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
 
@@ -49,9 +49,9 @@ public class AddressBookTest {
     @Test
     public void resetData_withDuplicatePersons_throwsDuplicatePersonException() {
         // Two persons with the same identity fields
-        Person editedAlice = new PersonBuilder(ALICE).withAvailabilities(VALID_AVAILABILITY_BOB)
+        Person editedAlice = new PersonBuilder(DANIEL).withAvailabilities(VALID_AVAILABILITY_BOB)
                 .withTags(VALID_TAG_ELDERCARE).build();
-        List<Person> newPersons = Arrays.asList(ALICE, editedAlice);
+        List<Person> newPersons = Arrays.asList(DANIEL, editedAlice);
         AddressBookStub newData = new AddressBookStub(newPersons);
 
         assertThrows(DuplicatePersonException.class, () -> addressBook.resetData(newData));
@@ -64,19 +64,19 @@ public class AddressBookTest {
 
     @Test
     public void hasPerson_personNotInAddressBook_returnsFalse() {
-        assertFalse(addressBook.hasPerson(ALICE));
+        assertFalse(addressBook.hasPerson(DANIEL));
     }
 
     @Test
     public void hasPerson_personInAddressBook_returnsTrue() {
-        addressBook.addPerson(ALICE);
-        assertTrue(addressBook.hasPerson(ALICE));
+        addressBook.addPerson(DANIEL);
+        assertTrue(addressBook.hasPerson(DANIEL));
     }
 
     @Test
     public void hasPerson_personWithSameIdentityFieldsInAddressBook_returnsTrue() {
-        addressBook.addPerson(ALICE);
-        Person editedAlice = new PersonBuilder(ALICE).withAvailabilities(VALID_AVAILABILITY_BOB)
+        addressBook.addPerson(DANIEL);
+        Person editedAlice = new PersonBuilder(DANIEL).withAvailabilities(VALID_AVAILABILITY_BOB)
                 .withTags(VALID_TAG_ELDERCARE).build();
         assertTrue(addressBook.hasPerson(editedAlice));
     }
@@ -94,25 +94,25 @@ public class AddressBookTest {
 
     @Test
     public void setPerson_personInAddressBook() {
-        addressBook.addPerson(ALICE);
-        addressBook.setPerson(ALICE, BENSON);
-        assertFalse(addressBook.hasPerson(ALICE));
+        addressBook.addPerson(DANIEL);
+        addressBook.setPerson(DANIEL, BENSON);
+        assertFalse(addressBook.hasPerson(DANIEL));
         assertTrue(addressBook.hasPerson(BENSON));
     }
 
     @Test
     public void removePerson_personInAddressBook() {
-        addressBook.addPerson(ALICE);
-        addressBook.removePerson(ALICE);
-        assertFalse(addressBook.hasPerson(ALICE));
+        addressBook.addPerson(DANIEL);
+        addressBook.removePerson(DANIEL);
+        assertFalse(addressBook.hasPerson(DANIEL));
     }
 
     @Test
     public void hashCodeTest() {
         AddressBook book1 = new AddressBook();
         AddressBook book2 = new AddressBook();
-        book1.addPerson(ALICE);
-        book2.addPerson(ALICE);
+        book1.addPerson(DANIEL);
+        book2.addPerson(DANIEL);
         assertEquals(book1.hashCode(), book2.hashCode());
     }
 
@@ -122,8 +122,8 @@ public class AddressBookTest {
         assertFalse(addressBook.equals("hello"));
 
         AddressBook other = new AddressBook();
-        addressBook.addPerson(ALICE);
-        other.addPerson(ALICE);
+        addressBook.addPerson(DANIEL);
+        other.addPerson(DANIEL);
         assertTrue(addressBook.equals(other));
     }
 

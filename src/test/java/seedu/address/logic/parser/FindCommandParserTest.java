@@ -67,7 +67,7 @@ public class FindCommandParserTest {
     }
     @Test
     public void parse_validNameAndAvailabilityArgs() {
-        Person alice = TypicalPersons.ALICE; //alice has availabilities 14/02/2024
+        Person alice = TypicalPersons.DANIEL; //alice has availabilities 14/02/2024
         Person benson = TypicalPersons.BENSON; //benson has availabilities 20/03/2024, 03/05/2024
         try {
             // single space between keywords
@@ -89,7 +89,7 @@ public class FindCommandParserTest {
 
     @Test
     public void parse_validMultipleNameArgs() {
-        Person alice = TypicalPersons.ALICE; //Alice has availabilities 14/02/2024
+        Person alice = TypicalPersons.DANIEL; //Alice has availabilities 14/02/2024
         Person benson = TypicalPersons.BENSON; //benson has availabilities 20/03/2024, 03/05/2024
         try {
             // single space between keywords
@@ -111,7 +111,7 @@ public class FindCommandParserTest {
 
     @Test
     public void parse_validMultipleAvailabilitiesArgs() {
-        Person alice = TypicalPersons.ALICE; //alice has availabilities 14/02/2024
+        Person alice = TypicalPersons.DANIEL; //alice has availabilities 14/02/2024
         Person benson = TypicalPersons.BENSON; //benson has availabilities 20/03/2024, 03/05/2024
         try {
             // single space between keywords

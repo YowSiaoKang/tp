@@ -1,6 +1,6 @@
 package seedu.address.testutil;
 
-import static seedu.address.testutil.TypicalPersons.ALICE;
+import static seedu.address.testutil.TypicalPersons.DANIEL;
 import static seedu.address.testutil.TypicalPersons.BENSON;
 import static seedu.address.testutil.TypicalPersons.CARL;
 
@@ -15,11 +15,11 @@ import seedu.address.model.assignment.Assignment;
  */
 public class TypicalAssignments {
 
-    public static final Assignment FOODDONATION = new AssignmentBuilder().withPerson(ALICE)
+    public static final Assignment FOODDONATION = new AssignmentBuilder().withPerson(DANIEL)
             .withDetails("Food Donation")
             .withAvailability("14/02/2024").build();
 
-    public static final Assignment FOODDONATIONCOPY = new AssignmentBuilder().withPerson(ALICE)
+    public static final Assignment FOODDONATIONCOPY = new AssignmentBuilder().withPerson(DANIEL)
             .withDetails("Food Donation")
             .withAvailability("14/02/2024").build();
 

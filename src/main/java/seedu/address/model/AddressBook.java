@@ -125,7 +125,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasPerson(Person person) {
         requireNonNull(person);
-
         return persons.contains(person);
     }
 
@@ -134,7 +133,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasExactPerson(Person person) {
         requireNonNull(person);
-
         return persons.containsExactPerson(person);
     }
 
@@ -143,7 +141,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasPhone(Phone phone) {
         requireNonNull(phone);
-
         return persons.contains(phone);
     }
 
@@ -152,7 +149,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasEmail(Email email) {
         requireNonNull(email);
-
         return persons.contains(email);
     }
 
@@ -161,7 +157,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasAssignment(Assignment assignment) {
         requireNonNull(assignment);
-
         return assignments.contains(assignment);
     }
 
@@ -196,7 +191,6 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void setPerson(Person target, Person editedPerson) {
         requireNonNull(editedPerson);
-
         persons.setPerson(target, editedPerson);
     }
 

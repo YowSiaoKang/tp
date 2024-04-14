@@ -14,6 +14,7 @@ import seedu.address.model.person.Person;
  */
 public class JsonAdaptedAssignment {
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Assignment's %s field is missing!";
+    public static final String MESSAGE_VOLUNTEER_NOT_AVAILABLE = "Assignment's %s field is missing!";
 
     private final JsonAdaptedPerson person;
     private final String details;
@@ -62,6 +63,9 @@ public class JsonAdaptedAssignment {
         final Availability modelAvailability = availability.toModelType();
         final AssignmentDetails modelDetails = new AssignmentDetails(details);
 
+        if (!modelPerson.isAvailable(modelAvailability)) {
+            throw new IllegalValueException(MESSAGE_VOLUNTEER_NOT_AVAILABLE);
+        }
 
         return new Assignment(modelPerson, modelDetails, modelAvailability);
     }
