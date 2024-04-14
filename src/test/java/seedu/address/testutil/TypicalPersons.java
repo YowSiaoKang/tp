@@ -25,7 +25,7 @@ import seedu.address.model.person.Person;
  */
 public class TypicalPersons {
 
-    public static final Person DANIEL = new PersonBuilder().withName("Alice Pauline")
+    public static final Person ALICE = new PersonBuilder().withName("Alice Pauline")
             .withAvailabilities("14/02/2024").withEmail("alice@example.com")
             .withPhone("94351253")
             .withTags("Food Bank", "Education").build();
@@ -78,7 +78,7 @@ public class TypicalPersons {
     }
 
     public static List<Person> getTypicalPersons() {
-        return new ArrayList<>(Arrays.asList(DANIEL, BENSON, CARL, DANIEL, ELLE, FIONA, GEORGE));
+        return new ArrayList<>(Arrays.asList(ALICE, BENSON, CARL, DANIEL, ELLE, FIONA, GEORGE));
     }
 
     /**
