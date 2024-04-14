@@ -99,7 +99,7 @@ A person can have any number of tags and any number of availabilities (including
 **:information_source: Take note:**<br>
 
 - Phone Number added should only contain numbers, and it should be at least 3 digits long.
-- Email added should be of format local-part@domain. `local-part` contains only alphanumeric characters and these special characters excluding parentheses (+_.-).
+- Email added should be of format local-part@domain. `local-part` contains only alphanumeric characters and these special characters +_.-
 `domain` is made up of domain labels and it must end with a label at least 2 character long. 
 Each domain label must start and end with alphanumeric characters.
 - Tag(s) added can be of any length, but tags that are longer than 25 characters will be truncated when they are shown.
@@ -127,11 +127,11 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY] [t/TAG]…​`
 - When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 - You can remove all the person’s tags by typing `t/` without
   specifying any tags after it.
-- Constraints for email, phone number and tag(s) are similar to that of `add` command.
+- Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-person--add) command.
 
 Examples:
 
-- `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
+- `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address ofz the 1st person to be `91234567` and `johndoe@example.com` respectively.
 - `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
 What you should see:
@@ -193,7 +193,7 @@ What you should see:
 
 Find people whose names contain any of the given name or availability.
 
-Format: `find [n/NAME] [a/AVAILABILITY] [MORE_KEYWORDS]`
+Format: `find [n/NAME] [a/AVAILABILITY]... [MORE_KEYWORDS]`
 
 - The search is case-insensitive. e.g `hans` will match `Hans`
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
@@ -207,8 +207,8 @@ Examples:
 - `find n/John` returns `john`, `John`, `John Doe` and so on...
 - `find n/alex david` returns `Alex Yeoh`, `David Li`<br>
 - `find n/alex n/david` returns `Alex Yeoh`, `David Li`
-- `find a/23/05/2024` returns people who are available on 23/05/2024
-- `find a/23/05/2024 a/24/05/2024` returns people who are available on either 23/05/2024 or 24/05/2024
+- `find a/23/05/2024` returns people who are available on `23/05/2024`
+- `find a/23/05/2024 a/24/05/2024` returns people who are available on either `23/05/2024` or `24/05/2024`
 
 What you should see:
 ![find](images/features/find.png)
