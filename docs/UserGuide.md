@@ -82,9 +82,9 @@ If you can type fast, Match can get your contact management tasks done faster th
 
 </div>
 
-### Adding a person: `add`
+### Adding a volunteer: `add`
 
-Adds a person to the volunteer contacts.
+Adds a volunteer to the volunteer contacts.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`
 - NAME
@@ -114,7 +114,7 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 
-A person can have any number of tags and any number of availabilities (including 0)
+A volunteer can have any number of tags and any number of availabilities (including 0)
 
 </div>
 
@@ -135,12 +135,12 @@ Examples:
 What you should see:
 ![add](images/features/add.png)
 
-### Editing a person : `edit`
+### Editing a volunteer : `edit`
 
-Edits an existing person in the volunteer contacts.
+Edits an existing volunteer in the volunteer contacts.
 
 Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​`
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+- Edits the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
 - At least one of the optional fields must be provided.
 - Existing values will be updated to the input values if they are valid.
 
@@ -148,16 +148,16 @@ Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t
 
 **:information_source: Take note:**<br>
 
-- When editing tags, the existing tags of the person will be removed i.e editing of tags is not cumulative. <br>
+- When editing tags, the existing tags of the volunteer will be removed i.e editing of tags is not cumulative. <br>
   e.g. `edit 1 t/newTag` will result a single tag `newTag` for volunteer at index 1.
-- You can remove all the person’s tags by typing `t/` without specifying any tags after it.
+- You can remove all the volunteer’s tags by typing `t/` without specifying any tags after it.
 
 </div>
 
 Examples:
 
-- `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
-- `edit 2 n/Betsy Crower t/` Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
+- `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st volunteer to be `91234567` and `johndoe@example.com` respectively.
+- `edit 2 n/Betsy Crower t/` Edits the name of the 2nd volunteer to be `Betsy Crower` and clears all existing tags.
 
 What you should see:
 ![edit1](images/features/edit1.png)
@@ -168,7 +168,7 @@ What you should see:
 Adds available dates to a volunteer.
 
 Format: `addavail INDEX a/AVAILABILITY`
-- Adds availabilities to person at the specified `INDEX`. This index refers to the index number shown in the displayed person list. <br>
+- Adds availabilities to volunteer at the specified `INDEX`. This index refers to the index number shown in the displayed volunteer list. <br>
   The index **must be a positive integer** 1, 2, 3, …​
 - Availability must be in the format of DD/MM/YYYY e.g. `28/03/2024`.
 - Duplicate availability for one volunteer is not allowed.
@@ -187,7 +187,7 @@ Removes available dates from a volunteer.
 
 Format: `removeavail INDEX a/AVAILABILITY`
 
-- Removes availabilities from person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+- Removes availabilities from volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
 - Availability must be in the format of DD/MM/YYYY e.g. `28/03/2024`.
 - Availability must be present at the index in order to remove.
 
@@ -205,16 +205,16 @@ This is mainly for record-keeping purposes. TOOOO BEEEEEE UPDATEDDDDDDD
 What you should see:
 ![removeavail](images/features/removeavail.png)
 
-### Listing all persons : `list`
+### Listing all volunteers : `list`
 
-Shows a list of all persons in the volunteer contacts.
+Shows a list of all volunteers in the volunteer contacts.
 
 Format: `list`
 
 What you should see:
 ![list](images/features/list.png)
 
-### Locating persons by name: `find`
+### Locating volunteers by name: `find`
 
 Find people whose names contain any of the given name, availability or keywords.
 
@@ -223,7 +223,7 @@ Format: `find KEYWORD [n/NAME] [a/AVAILABILITY] [MORE_KEYWORDS]`
 - The search is case-insensitive. e.g `hans` will match `Hans`
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 - Only full words will be matched e.g. `Han` will not match `Hans`
-- Persons matching at least one keyword will be returned (i.e. `OR` search).
+- volunteers matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
@@ -236,9 +236,9 @@ Examples:
 What you should see:
 ![find](images/features/find.png)
 
-### Deleting a person : `delete`
+### Deleting a volunteer : `delete`
 
-Deletes the specified person from the volunteer contacts.
+Deletes the specified volunteer from the volunteer contacts.
 
 Format: `delete INDEX`
 
@@ -252,18 +252,18 @@ Format: `delete INDEX`
 
 </div>
 
-- Deletes the person at the specified `INDEX`.
-- The index refers to the index number shown in the displayed person list.
+- Deletes the volunteer at the specified `INDEX`.
+- The index refers to the index number shown in the displayed volunteer list.
 - The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
 
-- `list` followed by `delete 2` deletes the 2nd person in the volunteer contacts.
-- `find Betsy` followed by `delete 1` deletes the 1st person in the results of the `find` command.
+- `list` followed by `delete 2` deletes the 2nd volunteer in the volunteer contacts.
+- `find Betsy` followed by `delete 1` deletes the 1st volunteer in the results of the `find` command.
 
 <div markdown="block" class="alert alert-warning">
 :exclamation: **Caution:**
-In this version of Match, deleting a person will not delete his/her assignments.
+In this version of Match, deleting a volunteer will not delete his/her assignments.
 </div>
 
 ### Clearing all entries : `clear`
@@ -288,10 +288,10 @@ Adds an assignment to a volunteer.
 
 Format: `assign INDEX d/ASSIGNMENTDETAILS a/AVAILABILITY`
 
-- Assigns the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+- Assigns the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
 - Availability must be in the format of DD/MM/YYYY eg: `28/03/2024`
-- The person at the specified `INDEX` must be available on the `AVAILABILITY` entered.
-- Each person can only be assigned 1 volunteer activity per day.
+- The volunteer at the specified `INDEX` must be available on the `AVAILABILITY` entered.
+- Each volunteer can only be assigned 1 volunteer activity per day.
 - `ASSIGNMENTDETAILS` must be alpha-numeric and cannot be empty. eg: `Willing Hearts`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
@@ -362,7 +362,7 @@ What you should see:
 
 ### Exporting to CSV: `export`
 
-Exports data to a comma-separated values (CSV) file located at `[JAR file location]/data`. Both persons and assignments are exported as `persons.csv` and `assignments.csv` respectively.
+Exports data to a comma-separated values (CSV) file located at `[JAR file location]/data`. Both volunteers and assignments are exported as `persons.csv` and `assignments.csv` respectively.
 
 <div markdown="block" class="alert alert-info">
 
@@ -434,7 +434,7 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. **When deleting a person or availability**, the assignment associated will not be deleted. This will be fixed in v1.4.
+2. **When deleting a volunteer or availability**, the assignment associated will not be deleted. This will be fixed in v1.4.
 3. **Invisible input caret**, there are times when the input caret (cursor) may become invisible even though the input field has focus. To resolve this, regain focus in the input field by pressing the Tab key a few times.
 
 ---
