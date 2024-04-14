@@ -197,7 +197,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY]… [t/TAG]…�
 - When editing tags, the existing tags of the volunteer will be removed i.e editing of tags is not cumulative. <br>
   e.g. `edit 1 t/newTag` will result a single tag `newTag` for volunteer at index 1.
 - You can remove all the volunteer’s tags by typing `t/` without specifying any tags after it.
-- Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-volunteer--add) command.
+- Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-volunteer-add) command.
 
 </div>
 
@@ -255,7 +255,7 @@ What you should see:
 
 ### Listing all volunteers : `list`
 
-Displays the [volunteer list](#volunteer-tab) with all volunteer contacts.
+Displays the [volunteer list](#listing-all-volunteers--list) with all volunteer contacts.
 
 Format: `list`
 
@@ -363,7 +363,7 @@ What you should see:
 
 Format: `lista`
 
-Displays the [assignment list](#assignment-tab) with all assignments.
+Displays the [assignment list](#2-assignments-tab) with all assignments.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 To switch back to volunteer list, type `list`
