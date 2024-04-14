@@ -495,6 +495,10 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Match home folder.
 
+
+**Q**: Why are all of my volunteers and assignments suddenly gone?
+**A**: The problem is most likely that your JSON file is corrupted or edited. Be careful on not to edit your JSON file directly and only use commands to do so.You can solve this by manually adding your volunteers and assignments again.
+
 ---
 
 <div style="page-break-after: always;"></div>
@@ -502,8 +506,7 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
-2. **When deleting a volunteer or availability**, the assignment associated will not be deleted. This will be fixed in v1.4.
-3. **Invisible input caret**, there are times when the input caret (cursor) may become invisible even though the input field has focus. To resolve this, regain focus in the input field by pressing the Tab key a few times.
+2. **Invisible input caret**, there are times when the input caret (cursor) may become invisible even though the input field has focus. To resolve this, regain focus in the input field by pressing the Tab key a few times.
 
 ---
 
