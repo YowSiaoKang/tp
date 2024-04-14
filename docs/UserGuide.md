@@ -255,7 +255,7 @@ What you should see:
 
 ### Listing all volunteers : `list`
 
-Displays the [volunteer list](#listing-all-volunteers--list) with all volunteer contacts.
+Displays the [volunteer list](#1-volunteers-tab) with all volunteer contacts.
 
 Format: `list`
 
