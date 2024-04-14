@@ -227,7 +227,7 @@ Format: `delete INDEX`
 
 - Do not panic, entering `y` following it will delete proceed to delete the specified entry, while entering anything else will default to cancelling the operation.
 
-- Deleting a person will result the person assigned to an assignment to be deleted as well.
+- Deleting a person will result in the person assigned to an assignment to be deleted as well.
 
 </div>
 
