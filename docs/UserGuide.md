@@ -17,7 +17,7 @@ If you can type fast, Match can get your contact management tasks done faster th
 
 
 - Table of Contents
-  {:toc}
+{:toc}
 
 ---
 
