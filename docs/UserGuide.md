@@ -247,8 +247,7 @@ Examples:
 
 <div markdown="block" class="alert alert-warning">
 :exclamation: **Caution:**
-In this version of Match, removing an availability will not delete assignments tagged to that deleted availability.
-This is mainly for record-keeping purposes. TOOOO BEEEEEE UPDATEDDDDDDD
+Removing an availability will cascade delete all assignments affected. For example, if Alice has an assignment on 14/04/2024 and that availability is removed, that assignment will also be removed.
 </div>
 
 What you should see:
@@ -316,7 +315,7 @@ Examples:
 
 <div markdown="block" class="alert alert-warning">
 :exclamation: **Caution:**
-In this version of Match, deleting a volunteer will not delete his/her assignments. TOOOO  BE UPDATEDDDDDD
+Remove a volunteer will also remove all of his/her assignments. Be careful with removing volunteers.
 </div>
 
 ### Clearing all entries : `clear`
