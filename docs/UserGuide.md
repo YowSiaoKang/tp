@@ -304,13 +304,13 @@ Format: `clear`
 
 Adds an assignment to a volunteer.
 
-Format: `assign INDEX d/ASSIGNMENTDETAILS a/AVAILABILITY`
+Format: `assign INDEX d/ASSIGNMENT_DETAILS a/AVAILABILITY`
 
 - Assigns the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
 - Availability must be in the format of DD/MM/YYYY eg: `28/03/2024`
 - The volunteer at the specified `INDEX` must be available on the `AVAILABILITY` entered.
 - Each volunteer can only be assigned 1 volunteer activity per day.
-- `ASSIGNMENTDETAILS` must be alpha-numeric and cannot be empty. eg: `Willing Hearts`
+- `ASSIGNMENT_DETAILS` must be alpha-numeric and cannot be empty. eg: `Willing Hearts`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 The index here works the same way as Edit!
@@ -345,6 +345,14 @@ Format: `removeassign INDEX`
 
 - Removes the assignment at that `INDEX`. The index refers to the index number shown in the assignment list. The index **must be a positive integer** 1, 2, 3, …​
 
+<div markdown="block" class="alert alert-info">
+
+**:information_source: Take Note:**<br>
+
+- This command can still run when the **volunteer list** is being displayed. The assignment removed will be the assignment with `INDEX` in the **assignment list**.
+
+</div>
+
 Examples:
 `removeassign 1`
 `removeassign 2`
@@ -357,21 +365,19 @@ Format: `refresh`
 
 ### Copying emails : `copy`
 
-Copies the email addresses of all volunteers in the currently filtered list to the clipboard.
+Copies the email addresses of all volunteers in the currently filtered volunteer list to the clipboard.
+
+Format: `copy`
+- The email addresses will be copied in a comma-separated format, e.g. `john@example.com, jane@example.com, ...`.
+- An error message will appear if the filtered volunteer list contains no volunteers.
 
 <div markdown="block" class="alert alert-info">
 
-**Notes about the command:**<br>
+**:information_source: Take Note:**<br>
 
-- This command cannot be used when the assignment list is being displayed. Switch back to the volunteer list by using the `list` command before using `copy`.
-
-- The email addresses will be copied in a comma-separated format, e.g. `john@example.com, jane@example.com, ...`.
-
-- An error message will appear if the filtered volunteer list contains no volunteers.
+- This command can still be used when the **assignment list** is being displayed. All volunteers' email addresses will be copied.
 
 </div>
-
-Format: `copy`
 
 Examples:
 
@@ -383,11 +389,13 @@ What you should see:
 
 ### Exporting to CSV: `export`
 
-Exports data to a comma-separated values (CSV) file located at `[JAR file location]/data`. Both volunteers and assignments are exported as `persons.csv` and `assignments.csv` respectively.
+Exports volunteer and assignment data to a comma-separated values (CSV) file located at `[JAR file location]/data`. Both volunteers and assignments are exported as `persons.csv` and `assignments.csv` respectively.
+
+Format: `export`
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Notes about `export` command:**<br>
+**:information_source: Take Note:**<br>
 
 - When using the application for the first time, executing the `export` command when the `addressbook.json` is missing will result in an error. Try executing other commands first. This will result `addressbook.json` file to be created.
 - When the `persons.csv` or `assignments.csv` files are being used by another application running `export` command will result in an error.
@@ -396,11 +404,11 @@ Exports data to a comma-separated values (CSV) file located at `[JAR file locati
 
 ### Viewing help : `help`
 
-Shows a message explaning how to access the help page.
-
-![add](images/features/help.jpg)
+Shows a message explaining how to access the help page.
 
 Format: `help`
+
+![add](images/features/help.jpg)
 
 ### Exiting the program : `exit`
 
@@ -417,7 +425,7 @@ To access the command history:
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Note**<br>
+**:information_source: Take Note**<br>
 - After you enter a command, the command history will automatically close. If you wish to close the command history manually, you have two options:
   1. Press the `Ctrl` key on your keyboard.
   2. Click anywhere outside of the command history dropdown.
@@ -466,12 +474,12 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/AVAILABILITY [t/TAG]…​`<br> e.g., `add n/James Ho p/96311212 e/jamesho@example.com a/25/05/2024 t/friend t/colleague`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/AVAILABILITY] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​​`<br> e.g., `add n/James Ho p/96311212 e/jamesho@example.com a/25/05/2024 t/elderly t/food`
+**Edit** | `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Add Availability** | `addavail INDEX a/AVAILABILITY`<br> e.g., `addavail 1 a/01/01/2024`
 **Remove Availability** | `removeavail INDEX a/AVAILABILITY`<br> e.g., `removeavail 1 a/01/01/2024`
 **List** | `list`
-**Find** | `find KEYWORD [n/NAME] [a/AVAILABILITY] [MORE_KEYWORDS]`<br> e.g., `find James Jake`
+**Find** | `find [n/NAME]… [a/AVAILABILITY]…`<br> e.g., `find n/James n/Jake`
 **Delete**[^1] | `delete INDEX`<br> e.g., `delete 3`
 **Clear**[^1] | `clear`
 **Assign** | `assign INDEX d/ASSIGNMENT_DETAILS a/AVAILABILITY`<br> e.g., `assign 1 d/Food Distribution a/01/01/2024`
