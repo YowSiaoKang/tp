@@ -21,12 +21,32 @@ Key features include:
 - Simplified Searching
 - Volunteer Work Assignment
 
-This user guide (UG) is your companion in **unlocking the full potential** of Match. It’s here to help you understand the app and leverage its features to manage your volunteers like never before.
-
-- Table of Contents
+Table of Contents
   {:toc}
 
 ---
+## Using this Guide
+
+This user guide (UG) is your companion in **unlocking the full potential** of Match. It’s here to help you understand the app and leverage its features to manage your volunteers like never before.
+
+### Icons
+<div markdown="block" class="alert alert-info">
+
+:information_source: **Take Note:**
+This icon is used to highlight important pieces of information that you should be aware of or take into consideration.
+</div>
+
+<div markdown="span" class="alert alert-primary">
+
+:bulb: **Tip:**
+Represents a helpful tip or piece of advice that can improve the your experience or understanding of the application.
+</div>
+
+<div markdown="block" class="alert alert-warning">
+
+:exclamation: **Caution:**
+Serves as a warning or cautionary note, indicating that there is something you needs to be careful about or pay special attention to.
+</div>
 
 <div style="page-break-after: always;"></div>
 
