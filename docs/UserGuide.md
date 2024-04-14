@@ -55,18 +55,33 @@ The following glossary clarifies commonly-used terminology:
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer.
+1. Ensure you have Java `11` or above installed in your Computer for the magic to work :magic_wand:.
 
 2. Download our latest `match.jar` from [here](https://github.com/AY2324S2-CS2103T-F10-4/tp/releases).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your Match.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar match.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+4. **For Windows:window: users:**
+   1. Open up Windows Search by pressing on the 'Windows' key and type `Command Prompt` or `Terminal`.
+   2. Run `cd [JAR file location]` then run `java -jar match.jar` command to open up app.<br>
+   Example:
+   ```shell
+    cd "C:\Users\John\My favourite location"
+   java -jar match.jar
+    ```
+5. **For Linux:penguin: /macOS:apple: users:**
+    1. Open up the search utility by pressing on the `Command` + `Space bar` key and type `Terminal`.
+    2. Run `cd [JAR file location]` then run `java -jar match.jar` command to open up app.<br>
+       Example:
+   ```bash
+    cd "~/John/My favourite location"
+   java -jar match.jar
+   ```
+6. A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
-   Some example commands you can try:
+5. Type the command in the command box and press Enter to execute it. e.g. typing `help` and pressing `Enter` will open the help window.<br>
+   Some example commands you can try :smile::
 
    - `list` : Lists all volunteers.
 
@@ -84,16 +99,16 @@ The following glossary clarifies commonly-used terminology:
 
 ## Navigating the GUI
 
-Match has a Graphical User Interface (GUI) that provides a pleasant visual experience on top of comphrehensive functionality.
-Here is a quick look at the two different tabs present in Match:
+Match has a Graphical User Interface (GUI) that provides a pleasant visual experience on top of comprehensive functionality.
+Here is a quick look at the **two** different tabs present in Match:
 
-### 1) Volunteers Tab
-Volunteer tab is the default tab, displaying all volunteers and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
+### Volunteers Tab
+Volunteers tab is the default tab, displaying all volunteers :ok_man: and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
 
 ![Volunteers Tab](images/VolunteersTab.png)
 
-### 2) Assignments Tab
-Assignment tab is the alternate tab that displays all assignments. This view helps you manage all of your assignments.
+### Assignments Tab
+Assignments tab is the alternate tab that displays all assignments :briefcase:. This view helps you manage all the assignments for your volunteers.
 
 ![Assignments Tab](images/AssignmentsTab.png)
 
@@ -131,21 +146,21 @@ Assignment tab is the alternate tab that displays all assignments. This view hel
 
 ### Adding a volunteer: `add`
 
-Adds a volunteer to the volunteer contacts.
+Never lose count of your volunteers :muscle:, add a volunteer to your volunteer contacts.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`
-- NAME
+- NAME :abc:
   - Only accepts spaces and alphanumeric characters.
   - Does not allow for duplication. You will be not allowed to add 2 volunteers with the 'same' name. the following points will explain what is considered 'same'.
   - For flexibility, upper and lower cases are considered distinct. <br>
   e.g. `Bob` and `bob` are considered 2 different entities.
   - The number of spaces entered will be registered. <br>
   e.g. `John[space]Doe` is different from `John[space][space]Doe`.
-- PHONE_NUMBER
+- PHONE_NUMBER :1234:
   - Only accepts numbers.
   - Must be at least 3 digits in length.
   - Does not allow for duplication.
-- EMAIL
+- EMAIL :symbols:
   - Format: `[local-part]@[domain-name]`
   - local-part:
     - Accepts special characters `+_.-` in addition to alphanumeric characters. 
@@ -155,8 +170,8 @@ Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`
     e.g. `example.com`is valid while `example..com` is not valid.
     - Domain label can only be alphanumeric characters, separated by a single hyphen (if any). However, ending domain label should not contain any hyphens.
     - Ending domain label needs to include a minimum of two characters.
-- AVAILABILITY - please refer to [addavail](#adding-availabilities--addavail).
-- TAG
+- AVAILABILITY :calendar: - refer to [addavail](#adding-availabilities--addavail).
+- TAG :name_badge:
   - Only accepts spaces and alphanumeric characters.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
@@ -184,29 +199,28 @@ What you should see:
 
 ### Editing a volunteer : `edit`
 
-Edits an existing volunteer in the volunteer contacts.
+Looks like someone changed their information, quick don't let the boss find out :fearful:. Use this to edit an existing volunteer in the volunteer contacts.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY]… [t/TAG]…​`
 - Edits the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
-- At least one of the optional fields must be provided.
-- Existing values will be updated to the input values if they are valid.
+- At least **one** of the optional fields must be provided.
+- **Existing values** will be updated to the input values if they are valid.
 
 <div markdown="block" class="alert alert-info">
 
 **:information_source: Take note:**<br>
 
-- When editing tags, the existing tags of the volunteer will be removed i.e editing of tags is not cumulative. <br>
+- When editing tags, the existing tags of the volunteer will be removed i.e. editing of tags are **not cumulative**. <br>
   e.g. `edit 1 t/newTag` will result a single tag `newTag` for volunteer at index 1.
-- You can remove all the volunteer’s tags by typing `t/` without specifying any tags after it.
+- You can **remove all** the volunteer’s tags by typing `t/` without specifying any tags after it.
 - Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-volunteer-add) command.
 
 </div>
 
 Examples:
 
-- `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st volunteer to be `91234567` and `johndoe@example.com` respectively.
-- `edit 2 n/Betsy Crower t/` Edits the name of the 2nd volunteer to be `Betsy Crower` and clears all existing tags.
-
+- `edit 1 p/91234567 e/johndoe@example.com` edits the phone number and email address of the 1st volunteer to `91234567` and `johndoe@example.com` respectively.
+- `edit 2 n/Betsy Crower t/` edits the name of the 2nd volunteer to `Betsy Crower` and clears all existing tags.
 
 What you should see:
 ![edit1](images/features/edit1.png)
@@ -214,7 +228,7 @@ What you should see:
 
 ### Adding availabilities : `addavail`
 
-Adds available dates to a volunteer.
+Yay looks like someone is free on that day :smiley:! Quickly add the available dates to the volunteer.
 
 Format: `addavail INDEX a/AVAILABILITY`
 - Adds availabilities to volunteer at the specified `INDEX`. This index refers to the index number shown in the displayed volunteer list. <br>
@@ -233,7 +247,7 @@ What you should see:
 
 ### Removing availabilities : `removeavail`
 
-Removes available dates from a volunteer.
+Uh oh seems like your volunteer is busy :anguished:, hurry and remove the available dates from the volunteer.
 
 Format: `removeavail INDEX a/AVAILABILITY`
 
@@ -256,7 +270,7 @@ What you should see:
 
 ### Listing all volunteers : `list`
 
-Displays the [volunteer list](#1-volunteers-tab) with all volunteer contacts.
+See everything :eyes:! Displays the [volunteer list](#volunteers-tab) with all volunteer contacts.
 
 Format: `list`
 
@@ -265,7 +279,7 @@ What you should see:
 
 ### Locating volunteers by name: `find`
 
-Finds and displays a filtered volunteer list containing volunteers matching the search.
+Looking for something specific :thinking:? Use this to find and display a filtered volunteer list containing volunteers matching the search.
 
 Format: `find [n/NAME]… [a/AVAILABILITY]…`
 
@@ -289,7 +303,7 @@ What you should see after `find n/John`:
 
 ### Deleting a volunteer : `delete`
 
-Deletes the specified volunteer from the volunteer contacts.
+Forgive and forget :broken_heart:, deletes the specified volunteer that are no longer with us from the volunteer contacts :slightly_frowning_face:.
 
 Format: `delete INDEX`
 
@@ -321,7 +335,7 @@ Remove a volunteer will also remove all of his/her assignments. Be careful with 
 
 ### Clearing all entries : `clear`
 
-Clears all volunteer entries from the volunteer contacts.
+Start anew :new:, clear all volunteer entries from the volunteer contacts when everything is over.
 
 Format: `clear`
 
@@ -337,7 +351,7 @@ Format: `clear`
 
 ### Assigning volunteers : `assign`
 
-Adds an assignment to a volunteer.
+Never forget another volunteering assignment :thumbsup:, add an assignment to a volunteer.
 
 Format: `assign INDEX d/ASSIGNMENT_DETAILS a/AVAILABILITY`
 
@@ -362,9 +376,9 @@ What you should see:
 
 ### Listing all assignments : `lista`
 
-Format: `lista`
+See everything :eyes:! Displays the [assignment list](#assignments-tab) with all assignments.
 
-Displays the [assignment list](#2-assignments-tab) with all assignments.
+Format: `lista`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 To switch back to volunteer list, type `list`
@@ -373,7 +387,7 @@ To switch back to volunteer list, type `list`
 
 ### Remove assignments : `removeassign`
 
-Removes an assignment from the assignment list.
+Oh, no the assignment has been cancelled :open_mouth:. Use this to remove an assignment from the assignment list.
 
 Format: `removeassign INDEX`
 
@@ -393,7 +407,7 @@ Examples:
 
 ### Refreshing availabilities : `refresh`
 
-Remove any outdated availabilities based on the today's date from volunteer contacts.
+Keep your data sparkling clean :sparkles:, remove any outdated availabilities based on the today's date from volunteer contacts.
 
 Format: `refresh`
 
@@ -404,7 +418,7 @@ Similar to removing availabilities, refresh will cascade delete all assignments 
 
 ### Copying emails : `copy`
 
-Copies the email addresses of all volunteers in the currently filtered volunteer list to the clipboard.
+Remember the good ol `Ctrl` + `c`? Copies the email addresses of all volunteers in the currently filtered volunteer list to the clipboard.
 
 Format: `copy`
 - The email addresses will be copied in a comma-separated format, e.g. `john@example.com, jane@example.com, ...`.
@@ -430,7 +444,7 @@ After pasting copied emails into Gmail:
 
 ### Exporting to CSV: `export`
 
-Exports volunteer and assignment data to a comma-separated values (CSV) file located at `[JAR file location]/data`. Both volunteers and assignments are exported as `persons.csv` and `assignments.csv` respectively.
+Impress your boss :man_office_worker: with this your own custom report from CSV. Export your way to victory :trophy:! Exports volunteer and assignment data to a comma-separated values (CSV) file located at `[JAR file location]/data`. Both volunteers and assignments are exported as `persons.csv` and `assignments.csv` respectively.
 
 Format: `export`
 
@@ -445,7 +459,7 @@ Format: `export`
 
 ### Viewing help : `help`
 
-Shows a message explaining how to access the help page.
+I am too noob :cry:, will someone help me? Never fear this shows a message explaining how to access the help page.
 
 Format: `help`
 
@@ -453,11 +467,13 @@ Format: `help`
 
 ### Exiting the program : `exit`
 
-Exits the program.
+Sad to see you go :frowning_face:, this exits the program.
 
 Format: `exit`
 
 ### Accessing the command history
+
+Superpower to see the past :superhero:.
 
 To access the command history:
 
@@ -476,7 +492,7 @@ To access the command history:
 
 ### Using the autocomplete
 
-Autocomplete provides suggestions based on your command history as you type. You can navigate through the suggestions using the arrow keys, similar to the command history.
+Become the fastest typist :keyboard:! Autocomplete provides suggestions based on your command history as you type. You can navigate through the suggestions using the arrow keys, similar to the command history.
 
 ### Saving the data
 
@@ -502,7 +518,7 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Match home folder.
 
 
-**Q**: Why are all of my volunteers and assignments suddenly gone?
+**Q**: Why are all of my volunteers and assignments suddenly gone?<br>
 **A**: The problem is most likely that your JSON file is corrupted or edited. Be careful on not to edit your JSON file directly and only use commands to do so.You can solve this by manually adding your volunteers and assignments again.
 
 ---
