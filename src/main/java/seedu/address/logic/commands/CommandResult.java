@@ -23,7 +23,7 @@ public class CommandResult {
     private final boolean exit;
 
     /** Application List Panel Selection */
-
+    // ListPanelView to switch views is inspired by https://github.com/AY2324S1-CS2103T-W08-4/tp
     public enum ListPanelView {
         NO_EFFECT,
         PERSON,

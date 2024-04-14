@@ -29,40 +29,42 @@ Table of Contents
 
 This user guide (UG) is your companion in **unlocking the full potential** of Match. It’s here to help you understand the app and leverage its features to manage your volunteers like never before.
 
-### Icons
-<div markdown="block" class="alert alert-info">
+### Glossary
 
-:information_source: **Take Note:**
-This icon is used to highlight important pieces of information that you should be aware of or take into consideration.
-</div>
+When using Match, you will encounter the symbols and terms explained below:
 
-<div markdown="span" class="alert alert-primary">
+| Symbol               | Meaning                                      |
+|----------------------|----------------------------------------------|
+| :information_source: | Important information                        |
+| :exclamation:        | Warning or caution                           |
+| :bulb:               | Additional information such as tips or notes |
 
-:bulb: **Tip:**
-Represents a helpful tip or piece of advice that can improve the your experience or understanding of the application.
-</div>
+The following glossary clarifies commonly-used terminology:
 
-<div markdown="block" class="alert alert-warning">
-
-:exclamation: **Caution:**
-Serves as a warning or cautionary note, indicating that there is something you needs to be careful about or pay special attention to.
-</div>
-
-<div style="page-break-after: always;"></div>
+| Phrases          | Meaning                                                                                           |
+|------------------|---------------------------------------------------------------------------------------------------|
+| GUI              | Graphical User Interface, the visual display of Match.                                            |
+| GUI component    | Parts that make up the GUI. For details, refer to [Navigating the GUI](#navigating-the-gui).      |
+| CLI              | Command Line Interface, a text-based way to interact with Match.                                  |
+| Command          | Input from the user telling Match to perform an action. See [Command Summary](#command-summary).  |
+| Prefix           | Fields in a command to fill up, capturing important information.                                  |
+| Case-sensitive   | Casing of alphabetic characters matters (e.g., “add” ≠ “ADD”).                                    |
+| Case-insensitive | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                           |
+| Contact card     | Box displaying each volunteer's details.                                                          |
 
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download our latest `match.jar` from [here](https://github.com/AY2324S2-CS2103T-F10-4/tp/releases).
+2. Download our latest `match.jar` from [here](https://github.com/AY2324S2-CS2103T-F10-4/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your Match.
+3. Copy the file to the folder you want to use as the _home folder_ for your Match.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar match.jar` command to run the application.<br>
+4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar match.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui.png)
 
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    - `list` : Lists all volunteers.
@@ -75,25 +77,24 @@ Serves as a warning or cautionary note, indicating that there is something you n
 
    - `exit` : Exits the app.
 
-1. Refer to the [Features](#features) below for details of each command.
+6. Refer to the [Features](#features) below for details of each command.
 
 ---
 
-<div style="page-break-after: always;"></div>
+## Navigating the GUI
 
-## Structure of Match
+Match has a Graphical User Interface (GUI) that provides a pleasant visual experience on top of comphrehensive functionality.
+Here is a quick look at the two different tabs present in Match:
 
-Match offers two distinct list.
+### 1) Volunteers Tab
+Volunteer tab is the default tab, displaying all volunteers and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
 
-### Volunteer List
-Volunteer list is the default list, displaying all volunteers and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
+![Volunteers Tab](images/VolunteersTab.png)
 
-image
+### 2) Assignments Tab
+Assignment tab is the alternate tab that displays all assignments. This view helps you manage all of your assignments.
 
-### Assignment List
-Assignment list is the alternate tab that displays all assignments. This view helps you manage all of your assignments.
-
-image
+![Assignments Tab](images/AssignmentsTab.png)
 
 ---
 
@@ -196,6 +197,7 @@ Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t
 - When editing tags, the existing tags of the volunteer will be removed i.e editing of tags is not cumulative. <br>
   e.g. `edit 1 t/newTag` will result a single tag `newTag` for volunteer at index 1.
 - You can remove all the volunteer’s tags by typing `t/` without specifying any tags after it.
+- Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-person--add) command.
 
 </div>
 
@@ -203,6 +205,7 @@ Examples:
 
 - `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st volunteer to be `91234567` and `johndoe@example.com` respectively.
 - `edit 2 n/Betsy Crower t/` Edits the name of the 2nd volunteer to be `Betsy Crower` and clears all existing tags.
+
 
 What you should see:
 ![edit1](images/features/edit1.png)
@@ -224,7 +227,8 @@ Examples:
 - `addavail 2 a/02/03/2024 a/03/03/2024`
 
 What you should see:
-![addavail](images/features/addavail.png)
+![addavail1](images/features/addavail1.png)
+![addavail2](images/features/addavail2.png)
 
 ### Removing availabilities : `removeavail`
 
@@ -252,7 +256,7 @@ What you should see:
 
 ### Listing all volunteers : `list`
 
-Displays the [volunteer list](#volunteer-list) with all volunteer contacts.
+Displays the [volunteer list](#volunteer-tab) with all volunteer contacts.
 
 Format: `list`
 
@@ -268,17 +272,18 @@ Format: `find [n/NAME]… [a/AVAILABILITY]…`
 - The search is case-insensitive. e.g `hans` will match `Hans`
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 - Only full words will be matched e.g. `Han` will not match `Hans`
-- volunteers matching at least one keyword will be returned (i.e. `OR` search).
+- Volunteers matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
 Examples:
 
 - `find n/John` returns `john`, `John`, `John Doe` and so on...
 - `find n/alex david` returns `Alex Yeoh`, `David Li`<br>
-- `find a/23/05/2024` returns volunteers who are available on 23/05/2024
-- find a/23/05/2024 a/24/05/2024 returns volunteers who are available on either 23/05/2024 or 24/05/2024
+- `find n/alex n/david` returns `Alex Yeoh`, `David Li`
+- `find a/23/05/2024` returns volunteers who are available on `23/05/2024`
+- `find a/23/05/2024 a/24/05/2024` returns volunteers who are available on either `23/05/2024` or `24/05/2024`
 
-What you should see:
+What you should see after `find n/John`:
 ![find](images/features/find.png)
 
 ### Deleting a volunteer : `delete`
@@ -356,7 +361,7 @@ What you should see:
 
 Format: `lista`
 
-Displays the [assignment list](#assignment-list) with all assignments.
+Displays the [assignment list](#assignment-tab) with all assignments.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 To switch back to volunteer list, type `list`
@@ -413,6 +418,8 @@ Examples:
 
 What you should see:
 ![copy](images/features/copy.png)
+After pasting copied emails into Gmail:
+![email](images/features/email.png)
 
 ### Exporting to CSV: `export`
 
@@ -454,8 +461,8 @@ To access the command history:
 
 **:information_source: Take Note**<br>
 - After you enter a command, the command history will automatically close. If you wish to close the command history manually, you have two options:
-  1. Press the `Ctrl` key on your keyboard.
-  2. Click anywhere outside of the command history dropdown.
+    1. Press the `Ctrl` key on your keyboard.
+    2. Click anywhere outside of the command history dropdown.
 - Long input commands will be truncated when viewed in the command history. This has no effect on the functioning of the command history or the execution of previous commands.
 
 </div>
@@ -501,8 +508,8 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​​`<br> e.g., `add n/James Ho p/96311212 e/jamesho@example.com a/25/05/2024 t/elderly t/food`
-**Edit** | `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`<br> e.g., `add n/James Ho p/96311212 e/jamesho@example.com a/25/05/2024 t/elderly t/food`
+**Edit** | `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Add Availability** | `addavail INDEX a/AVAILABILITY`<br> e.g., `addavail 1 a/01/01/2024`
 **Remove Availability** | `removeavail INDEX a/AVAILABILITY`<br> e.g., `removeavail 1 a/01/01/2024`
 **List** | `list`
