@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Match User Guide
+title: User Guide
 ---
 
 <br>
@@ -21,6 +21,7 @@ Key features include:
 - Simplified Searching
 - Volunteer Work Assignment
 
+---
 - Table of Contents
 {:toc}
 
@@ -522,7 +523,7 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 Action | Format, Examples
 --------|------------------
 **Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL [a/AVAILABILITY]… [t/TAG]…​`<br> e.g., `add n/James Ho p/96311212 e/jamesho@example.com a/25/05/2024 t/elderly t/food`
-**Edit** | `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Edit** | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY]… [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Add Availability** | `addavail INDEX a/AVAILABILITY`<br> e.g., `addavail 1 a/01/01/2024`
 **Remove Availability** | `removeavail INDEX a/AVAILABILITY`<br> e.g., `removeavail 1 a/01/01/2024`
 **List** | `list`
