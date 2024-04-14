@@ -73,8 +73,10 @@ public class RemoveAvailCommand extends Command {
 
         Person editedPerson = createEditedPerson(personToEdit, availabilities);
 
+        model.cascadeUpdateAssignments(personToEdit, editedPerson);
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+
         return new CommandResult(String.format(MESSAGE_REMOVE_AVAILABILITY_SUCCESS,
             Messages.formatAvailability(editedPerson)));
     }
@@ -82,6 +84,10 @@ public class RemoveAvailCommand extends Command {
     /**
      * Creates and returns a {@code Person} with the details of {@code personToEdit}
      * edited with {@code editPersonDescriptor}.
+     *
+     * @param personToEdit the person before editing their information
+     * @param availabilities the person's availabilities after editing
+     * @return a person with information that has been edited
      */
     public static Person createEditedPerson(Person personToEdit, Set<Availability> availabilities) {
         assert personToEdit != null;
@@ -98,8 +104,6 @@ public class RemoveAvailCommand extends Command {
 
         return new Person(updatedName, updatedPhone, updatedEmail, existingAvailabilities, updatedTags);
     }
-
-
 
     @Override
     public boolean equals(Object other) {

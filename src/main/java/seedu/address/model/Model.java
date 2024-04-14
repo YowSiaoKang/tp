@@ -129,4 +129,17 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredAssignmentList(Predicate<Assignment> predicate);
+
+    /**
+     * Cascade update assignments when a person's information is changed.
+     * @param before the person's information is updated
+     * @param after the person's information is updated
+     */
+    void cascadeUpdateAssignments(Person before, Person after);
+
+    /**
+     * Cascade update assignments when a person is deleted.
+     * @param toDelete is the person to be deleted.
+     */
+    void cascadeUpdateAssignments(Person toDelete);
 }

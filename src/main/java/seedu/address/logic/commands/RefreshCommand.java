@@ -60,6 +60,9 @@ public class RefreshCommand extends Command {
     }
 
     private Person updatePersonAvailability(Person person, Availability dateToDelete) {
+        requireNonNull(person);
+        requireNonNull(dateToDelete);
+
         Set<Availability> updatedAvailabilities = person.getAvailabilities().stream()
             .filter(availability -> !availability.getDate().isBefore(dateToDelete.getDate()))
             .collect(Collectors.toSet());
@@ -68,12 +71,18 @@ public class RefreshCommand extends Command {
     }
 
     private void updateModelWithPersons(Model model, Set<Person> personsToUpdate) {
+        requireNonNull(model);
+        requireNonNull(personsToUpdate);
+
         personsToUpdate.forEach(editedPerson ->
             model.getFilteredPersonList().stream()
                 .filter(person -> person.isSamePerson(editedPerson))
                 .findFirst()
-                .ifPresent(personToEdit -> model.setPerson(personToEdit, editedPerson))
-        );
+                .ifPresent(personToEdit -> {
+                            model.cascadeUpdateAssignments(personToEdit, editedPerson);
+                            model.setPerson(personToEdit, editedPerson);
+                        }
+                ));
     }
     @Override
     public boolean equals(Object other) {

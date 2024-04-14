@@ -241,6 +241,15 @@ public class AddAssignmentCommandTest {
         public ObservableList<Assignment> getFilteredAssignmentList() {
             throw new AssertionError("This method should not be called.");
         }
+        @Override
+        public void cascadeUpdateAssignments(Person toDelete) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void cascadeUpdateAssignments(Person target, Person editedPerson) {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     /**
