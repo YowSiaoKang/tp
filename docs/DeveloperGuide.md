@@ -828,6 +828,19 @@ testers are expected to do more *exploratory* testing.
         Expected: Match launches but the lists are empty.
 
 ## **Appendix: Planned Enhancements**
+Team size: 5-person
+
+Given below are the planned enhancements for the application.
+1. Duplicate Names: The current system does not allow duplicate names. This can be a problem when two people with the same name want to register. The enhancement will allow duplicate person names as long as the phone number and email are different. This addresses the flaw of not being able to register multiple people with the same name. 
+2. Multiple Spaces: The system currently identifies multiple spaces as separate entities. The enhancement will treat multiple consecutive spaces as a single space, improving the accuracy of name input.
+3. Special Characters: The system currently does not support special characters like ‘-’ and ‘/’ in names and assignment details. The enhancement will add support for these characters, allowing for more diverse names and detailed descriptions.
+4. Length Limit: The system currently does not limit the length of the phone number. The enhancement will limit the phone number length to the maximum phone length worldwide (15 digits), preventing the input of unrealistically long phone numbers.
+5. Case Sensitivity: The system currently treats uppercase and lowercase letters as different characters in emails. The enhancement will make the email field case insensitive, preventing duplicate emails of different cases.
+6. Past Dates: The system currently allows the addition of past dates. The enhancement will display a warning message when adding dates that have passed, preventing the input of irrelevant dates.
+7. Time Support: The system currently only supports whole-day availability. The enhancement will add support for specific times, providing more accurate availability.
+8. Multiple Volunteers: The system currently only allows the assignment of one volunteer. The enhancement will allow assignment to multiple volunteers, improving task distribution.
+9. Command Restriction: The system currently allows the use of all commands in both “volunteer list view” and “assignment list view”. The enhancement will limit the use of certain commands to certain list view. For example, the ‘Copy’ command can only be used in the volunteer list view and ‘Removeassign’ can only be used in the assignment list view. This addresses the flaw of commands affecting unintended lists.
+10. Date Order: The system currently does not sort dates. The enhancement will display dates in sorted order, making it easier to view availability.
 
 ## **Appendix: Effort**
 
