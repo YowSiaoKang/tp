@@ -396,6 +396,11 @@ Remove any outdated availabilities based on the today's date from volunteer cont
 
 Format: `refresh`
 
+<div markdown="block" class="alert alert-warning">
+:exclamation: **Caution:**
+Similar to removing availabilities, refresh will cascade delete all assignments affected. For example, if Alice has an assignment on 14/04/2024 and that availability is removed, that assignment will also be removed. 
+</div>
+
 ### Copying emails : `copy`
 
 Copies the email addresses of all volunteers in the currently filtered volunteer list to the clipboard.
