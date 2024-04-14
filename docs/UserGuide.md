@@ -185,7 +185,7 @@ What you should see:
 
 Edits an existing volunteer in the volunteer contacts.
 
-Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​`
+Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY]… [t/TAG]…​`
 - Edits the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
 - At least one of the optional fields must be provided.
 - Existing values will be updated to the input values if they are valid.
@@ -197,7 +197,7 @@ Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t
 - When editing tags, the existing tags of the volunteer will be removed i.e editing of tags is not cumulative. <br>
   e.g. `edit 1 t/newTag` will result a single tag `newTag` for volunteer at index 1.
 - You can remove all the volunteer’s tags by typing `t/` without specifying any tags after it.
-- Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-person--add) command.
+- Constraints for email, phone number and tag(s) are similar to that of [add](#adding-a-volunteer--add) command.
 
 </div>
 
@@ -270,6 +270,7 @@ Finds and displays a filtered volunteer list containing volunteers matching the 
 Format: `find [n/NAME]… [a/AVAILABILITY]…`
 
 - The search is case-insensitive. e.g `hans` will match `Hans`
+- At least one of the optional fields must be provided.
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
 - Only full words will be matched e.g. `Han` will not match `Hans`
 - Volunteers matching at least one keyword will be returned (i.e. `OR` search).
