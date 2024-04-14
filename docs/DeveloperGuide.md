@@ -393,8 +393,8 @@ Use Case ends.
   - 3a1. The system acknowledges the cancellation and does nothing.
   - Use case ends.
 
-- 5a. User enters an invalid volunteer.
-    - 5a1. Match shows an error message
+- 4a. User enters an invalid volunteer.
+    - 4a1. Match shows an error message
     - Use case ends.
 
 
