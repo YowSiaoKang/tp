@@ -369,7 +369,6 @@ Displays the [assignment list](#2-assignments-tab) with all assignments.
 To switch back to volunteer list, type `list`
 </div>
 
-What you should see: [here](UserGuide.md/#assigning-volunteers--assign)
 
 ### Remove assignments : `removeassign`
 
