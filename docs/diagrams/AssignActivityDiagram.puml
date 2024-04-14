@@ -1,0 +1,32 @@
+@startuml
+skin rose
+skinparam ActivityFontSize 15
+skinparam ArrowFontSize 12
+start
+:User assigns a volunteer;
+:Parse arguments;
+if () then ([Invalid arguments])
+    #red:Shows error message;
+else ([Valid Arguments])
+:Check whether volunteer is available on that day;
+if () then ([Volunteer not available])
+    #red:Shows error message;
+
+else ([Volunteer available])
+:Check whether volunteer already has an assignment on that day;
+if () then ([Already has an assignment])
+    #red:Shows error message;
+
+else ([No assignments])
+:Check for duplicate assignments;
+if () then ([Duplicate assignments])
+    #red:Shows error message;
+
+else ([No duplicate assignments])
+    #green:Create assignment and add;
+endif
+endif
+endif
+endif
+stop
+@enduml
