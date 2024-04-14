@@ -185,22 +185,8 @@ What you should see:
 
 Edits an existing volunteer in the volunteer contacts.
 
-<<<<<<< HEAD
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY] [t/TAG]…​`
-
-<div markdown="block" class="alert alert-info">
-
-**:information_source: Take note:**<br>
-
-- Editing a person's availability will automatically remove the assignment the person is assigned to.
-
-</div>
-
-- Edits the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
-=======
 Format: `edit INDEX [n/NAME]… [p/PHONE]… [e/EMAIL]… [a/AVAILABILITY]… [t/TAG]…​`
 - Edits the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
->>>>>>> d8fd8504911d988a7dcd578f601b3a3f6cac8c37
 - At least one of the optional fields must be provided.
 - Existing values will be updated to the input values if they are valid.
 
