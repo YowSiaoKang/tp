@@ -1,6 +1,6 @@
 ---
 layout: page
-title: User Guide
+title: Match User Guide
 ---
 
 <br>
@@ -9,12 +9,19 @@ title: User Guide
 
 <br>
 
-Match is a **desktop app for volunteer coordinators** to keep track of volunteer contacts as well as assign volunteering assignments to them.
+Welcome to Match!
 
-We are **optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). 
+Your premier **desktop app for volunteer coordinators** to keep track of volunteer contacts as well as assign volunteering assignments to them.
 
-If you can type fast, Match can get your contact management tasks done faster than traditional GUI apps.
+We are **optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Match can get your contact management tasks done faster than traditional GUI apps.
 
+Key features include:
+- Fast Volunteer Addition
+- Effortless Editing
+- Simplified Searching
+- Volunteer Work Assignment
+
+This user guide (UG) is your companion in **unlocking the full potential** of Match. It’s here to help you understand the app and leverage its features to manage your volunteers like never before.
 
 - Table of Contents
   {:toc}
@@ -38,7 +45,7 @@ If you can type fast, Match can get your contact management tasks done faster th
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
-   - `list` : Lists all contacts.
+   - `list` : Lists all volunteers.
 
    - `add n/John Doe p/98765432 e/johnd@example.com a/25/05/2025` : Adds a contact named `John Doe` to the volunteer contacts.
 
