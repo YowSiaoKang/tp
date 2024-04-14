@@ -327,7 +327,9 @@ What you should see:
 
 ### Listing all assignments : `lista`
 
-Shows a list of all assignments.
+Format: `lista`
+
+Displays the [assignment list](#assignment-list) with all assignments.
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 To switch back to volunteer list, type `list`
@@ -338,9 +340,10 @@ What you should see: [here](UserGuide.md/#assigning-volunteers--assign)
 ### Remove assignments : `removeassign`
 
 Removes an assignment from the assignment list.
+
 Format: `removeassign INDEX`
 
-- Removes the assignment at that `INDEX`. The index refers to the index number shown in the displayed assignment list. The index **must be a positive integer** 1, 2, 3, …​
+- Removes the assignment at that `INDEX`. The index refers to the index number shown in the assignment list. The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
 `removeassign 1`
