@@ -1,0 +1,17 @@
+@startuml
+!include style.puml
+skinparam arrowThickness 1.1
+skinparam arrowColor MODEL_COLOR
+skinparam classBackgroundColor MODEL_COLOR
+
+Package Assignment as ModelPackage <<Rectangle>>{
+Class Person
+Class Availability
+Class Assignment
+Class AssignmentDetails
+Class I #FFFFFF
+}
+Assignment *--> "1" Person
+Assignment *--> "1" AssignmentDetails
+Assignment *--> "1" Availability
+@enduml
