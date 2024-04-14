@@ -260,6 +260,10 @@ Deletes the specified volunteer from the volunteer contacts.
 
 Format: `delete INDEX`
 
+- Deletes the volunteer at the specified `INDEX`.
+- The index refers to the index number shown in the displayed volunteer list.
+- The index **must be a positive integer** 1, 2, 3, …​
+
 <div markdown="block" class="alert alert-info">
 
 **:information_source: Take note:**<br>
@@ -270,10 +274,6 @@ Format: `delete INDEX`
 
 </div>
 
-- Deletes the volunteer at the specified `INDEX`.
-- The index refers to the index number shown in the displayed volunteer list.
-- The index **must be a positive integer** 1, 2, 3, …​
-
 Examples:
 
 - `list` followed by `delete 2` deletes the 2nd volunteer in the volunteer contacts.
@@ -281,7 +281,7 @@ Examples:
 
 <div markdown="block" class="alert alert-warning">
 :exclamation: **Caution:**
-In this version of Match, deleting a volunteer will not delete his/her assignments.
+In this version of Match, deleting a volunteer will not delete his/her assignments. TOOOO  BE UPDATEDDDDDD
 </div>
 
 ### Clearing all entries : `clear`
