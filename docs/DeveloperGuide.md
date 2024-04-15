@@ -683,6 +683,7 @@ testers are expected to do more *exploratory* testing.
    4. Test Case: `find`
 
         Expected: Error thrown, stating that at least one search criterion must be present.
+
 ### Removing a volunteer
 1. Remove a volunteer from the application based on the volunteer list
    1. Prerequisites: There must be at least one volunteer present in the current list.
