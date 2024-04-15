@@ -473,7 +473,8 @@ I am too noob :cry:, will someone help me? Never fear this shows a message expla
 
 Format: `help`
 
-![add](images/features/help.jpg)
+What you should see:<br>
+![help](images/features/help.jpg)
 
 ### Exiting the program : `exit`
 
@@ -500,9 +501,15 @@ To access the command history:
 
 </div>
 
+What you should see:<br>
+![commandhistory](images/features/CommandHistory.png)
+
 ### Using the autocomplete
 
 Become the fastest typist :keyboard:! Autocomplete provides suggestions based on your command history as you type. You can navigate through the suggestions using the arrow keys, similar to the command history.
+
+What you should see:<br>
+![autocomplete](images/features/AutoComplete.png)
 
 ### Saving the data
 
