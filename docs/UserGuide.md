@@ -52,21 +52,31 @@ When using Match, you will encounter the symbols and terms explained below:
 
 The following glossary clarifies commonly-used terminology:
 
-| Phrases          | Meaning                                                                                           |
-|------------------|---------------------------------------------------------------------------------------------------|
-| GUI              | Graphical User Interface, the visual display of Match.                                            |
-| GUI component    | Parts that make up the GUI. For details, refer to [Navigating the GUI](#navigating-the-gui).      |
-| CLI              | Command Line Interface, a text-based way to interact with Match.                                  |
-| Command          | Input from the user telling Match to perform an action. See [Command Summary](#command-summary).  |
-| Prefix           | Fields in a command to fill up, capturing important information.                                  |
-| Case-sensitive   | Casing of alphabetic characters matters (e.g., “add” ≠ “ADD”).                                    |
-| Case-insensitive | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                           |
-| Contact card     | Box displaying each volunteer's details.                                                          |
-
+| Term                         | Meaning                                                                                                                                                                                                           |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Assignment                   | A volunteering assignment that has to be completed by the organization.                                                                                                                                           |
+| Availability                 | A date or multiple dates to indicate when the volunteer is available.                                                                                                                                             | 
+| Case-insensitive             | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                                                                                                                                           |
+| Case-sensitive               | Casing of alphabetic characters matters (e.g., “add” ≠ “ADD”).                                                                                                                                                    |
+| Command Line Interface (CLI) | A text-based way to interact with Match.                                                                                                                                                                          |
+| Command                      | Input from the user telling Match to perform an action. See [Command Summary](#command-summary).                                                                                                                  |
+| Command Prompt               | The default terminal for Windows.                                                                                                                                                                                 |
+| Comma-separated values (CSV) | A text file format storage whereby each field is being separated by a comma.                                                                                                                                      |
+| Contact card                 | Box displaying each volunteer's details.                                                                                                                                                                          |
+| Entry                        | A collection of information. Typically displayed as a single row in Match GUI. `NAME`, `PHONE_NUMBER`, `EMAIL`, `AVAILABILITY` and `TAG` information forms a single entry, refer [here](#adding-a-volunteer-add). |
+| Field                        | Also commonly known as the columns of a table.                                                                                                                                                                    |
+| GUI                          | Graphical User Interface, the visual display of Match.                                                                                                                                                            |
+| GUI component                | Parts that make up the GUI. For details, refer to [Navigating the GUI](#navigating-the-gui).                                                                                                                      |
+| Java                         | The main programming language that is powering this magical software.                                                                                                                                             |
+| Parameter                    | Fields in a command to fill up, capturing important information.                                                                                                                                                  |
+| Prefix                       | A special kind of variable used to identify fields. E.g. `n/` is the parameter for the `NAME` field, refer [here](#adding-a-volunteer-add).                                                                       |
+| Tag                          | A keyword or term assigned to a piece of information to assist in identification.                                                                                                                                 |
+| Terminal                     | A CLI interpreter to execute commands that can perform tasks on a computer.                                                                                                                                       |
+| Volunteer                    | A person who is tasked to take on volunteering assignments.                                                                                                                                                       |       
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer for the magic to work :magic_wand:.
+1. Ensure you have Java `11` or above installed in your computer for the magic to work :magic_wand:. Refer [here](https://www.java.com/en/download/help/download_options.html) on how to install Java.
 
 2. Download our latest `match.jar` from [here](https://github.com/AY2324S2-CS2103T-F10-4/tp/releases).
 
@@ -109,6 +119,8 @@ The following glossary clarifies commonly-used terminology:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## Navigating the GUI
 
 Match has a Graphical User Interface (GUI) that provides a pleasant visual experience on top of comprehensive functionality.
@@ -118,6 +130,8 @@ Here is a quick look at the **two** different tabs present in Match:
 Volunteers tab is the default tab, displaying all volunteers :ok_man: and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
 
 ![Volunteers Tab](images/VolunteersTab.png)
+
+<div style="page-break-after: always;"></div>
 
 ### Assignments Tab
 Assignments tab is the alternate tab that displays all assignments :briefcase:. This view helps you manage all the assignments for your volunteers.
@@ -156,7 +170,7 @@ Assignments tab is the alternate tab that displays all assignments :briefcase:. 
 
 </div>
 
-<font color="green"> === Now let us begin your wizardry journey as you acquire new spells to slay the work monsters :space_invader:. === </font>
+<font color="green">Now let us begin your wizardry journey as you acquire new spells to slay the work monsters :space_invader:.</font>
 
 ### Adding a volunteer: `add`
 
@@ -334,7 +348,7 @@ Format: `delete INDEX`
 
 - Do not panic, entering `y` following it will delete proceed to delete the specified entry, while entering anything else will default to cancelling the operation.
 
-- Deleting a person will result in the person assigned to an assignment to be deleted as well.
+- Deleting a volunteer will result in the volunteer assigned to an assignment to be deleted as well.
 
 </div>
 
@@ -534,7 +548,7 @@ If your changes to the data file makes its format invalid, Match will discard al
 Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
-<font color="green"> === Congratulations you have mastered all the elements you are now a qualified wizard :mage:! === </font>
+<font color="green">Congratulations you have mastered all the elements you are now a qualified wizard :mage:!</font>
 
 ## FAQ
 
