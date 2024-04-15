@@ -52,17 +52,24 @@ When using Match, you will encounter the symbols and terms explained below:
 
 The following glossary clarifies commonly-used terminology:
 
-| Phrases          | Meaning                                                                                           |
-|------------------|---------------------------------------------------------------------------------------------------|
-| GUI              | Graphical User Interface, the visual display of Match.                                            |
-| GUI component    | Parts that make up the GUI. For details, refer to [Navigating the GUI](#navigating-the-gui).      |
-| CLI              | Command Line Interface, a text-based way to interact with Match.                                  |
-| Command          | Input from the user telling Match to perform an action. See [Command Summary](#command-summary).  |
-| Prefix           | Fields in a command to fill up, capturing important information.                                  |
-| Case-sensitive   | Casing of alphabetic characters matters (e.g., “add” ≠ “ADD”).                                    |
-| Case-insensitive | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                           |
-| Contact card     | Box displaying each volunteer's details.                                                          |
-
+| Terms                        | Meaning                                                                                                                                                                                                           |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Assignment                   | A volunteering assignment that has to be completed by the organization.                                                                                                                                           |
+| Availability                 | A data or multiple dates to indicate when the volunteer is available.                                                                                                                                             | 
+| Case-insensitive             | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                                                                                                                                           |
+| Case-sensitive               | Casing of alphabetic characters matters (e.g., “add” ≠ “ADD”).                                                                                                                                                    |
+| Command Line Interface (CLI) | A text-based way to interact with Match.                                                                                                                                                                          |
+| Command                      | Input from the user telling Match to perform an action. See [Command Summary](#command-summary).                                                                                                                  |
+| Comma-separated values (CSV) | A text file format storage whereby each field is being separated by a comma.                                                                                                                                      |
+| Contact card                 | Box displaying each volunteer's details.                                                                                                                                                                          |
+| Entry                        | A collection of information. Typically displayed as a single row in Match GUI. `NAME`, `PHONE_NUMBER`, `EMAIL`, `AVAILABILITY` and `TAG` information forms a single entry, refer [here](#adding-a-volunteer-add). |
+| Field                        | Also commonly known as the columns of a table.                                                                                                                                                                    |
+| GUI                          | Graphical User Interface, the visual display of Match.                                                                                                                                                            |
+| GUI component                | Parts that make up the GUI. For details, refer to [Navigating the GUI](#navigating-the-gui).                                                                                                                      |
+| Parameter                    | A special kind of variable used to identify fields. E.g. `n/` is the parameter for the `NAME` field, refer [here](#adding-a-volunteer-add).                                                                       |
+| Prefix                       | Fields in a command to fill up, capturing important information.                                                                                                                                                  |
+| Tag                          | A keyword or term assigned to a piece of information to assist in identification.                                                                                                                                 |
+| Volunteer                    | A person who is tasked to take on volunteering assignments.                                                                                                                                                       |       
 
 ## Quick start
 
@@ -338,7 +345,7 @@ Format: `delete INDEX`
 
 - Do not panic, entering `y` following it will delete proceed to delete the specified entry, while entering anything else will default to cancelling the operation.
 
-- Deleting a person will result in the person assigned to an assignment to be deleted as well.
+- Deleting a volunteer will result in the volunteer assigned to an assignment to be deleted as well.
 
 </div>
 
