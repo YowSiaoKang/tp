@@ -9,11 +9,13 @@ title: User Guide
 
 <br>
 
-Welcome to Match!
+Welcome to Match :mage:!
 
 Your premier **desktop app for volunteer coordinators** to keep track of volunteer contacts as well as assign volunteering assignments to them.
 
 We are **optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Match can get your contact management tasks done faster than traditional GUI apps.
+
+Master the wand and become the ultimate task wizard :mage:.
 
 Key features include:
 - Fast Volunteer Addition
@@ -78,6 +80,7 @@ The following glossary clarifies commonly-used terminology:
     cd "C:\Users\John\My favourite location"
    java -jar match.jar
     ```
+
 5. **For Linux:penguin: / macOS:apple: users:**
     1. Open up the search utility by pressing on the `Command` + `Space bar` key and type `Terminal`.
     2. Run `cd [JAR file location]` then run `java -jar match.jar` command to open up app.<br>
@@ -152,6 +155,8 @@ Assignments tab is the alternate tab that displays all assignments :briefcase:. 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 </div>
+
+<font color="green"> === Now let us begin your wizardry journey as you acquire new spells to slay the work monsters :space_invader:. === </font>
 
 ### Adding a volunteer: `add`
 
@@ -528,6 +533,8 @@ Match data are saved automatically as a JSON file `[JAR file location]/data/addr
 If your changes to the data file makes its format invalid, Match will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
+
+<font color="green"> === Congratulations you have mastered all the elements you are now a qualified wizard :mage:! === </font>
 
 ## FAQ
 
