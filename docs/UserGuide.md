@@ -109,6 +109,8 @@ The following glossary clarifies commonly-used terminology:
 
 ---
 
+<div style="page-break-after: always;"></div>
+
 ## Navigating the GUI
 
 Match has a Graphical User Interface (GUI) that provides a pleasant visual experience on top of comprehensive functionality.
@@ -118,6 +120,8 @@ Here is a quick look at the **two** different tabs present in Match:
 Volunteers tab is the default tab, displaying all volunteers :ok_man: and their availability on a single screen. This view is useful for finding volunteers, which you will learn how to accomplish later!
 
 ![Volunteers Tab](images/VolunteersTab.png)
+
+<div style="page-break-after: always;"></div>
 
 ### Assignments Tab
 Assignments tab is the alternate tab that displays all assignments :briefcase:. This view helps you manage all the assignments for your volunteers.
