@@ -26,6 +26,8 @@ Key features include:
 <div style="page-break-after: always;"></div>
 
 Table of Contents
+
+- Table of Contents
 {:toc}
 
 ---
@@ -59,7 +61,6 @@ The following glossary clarifies commonly-used terminology:
 | Case-insensitive | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                           |
 | Contact card     | Box displaying each volunteer's details.                                                          |
 
-<div style="page-break-after: always;"></div>
 
 ## Quick start
 
