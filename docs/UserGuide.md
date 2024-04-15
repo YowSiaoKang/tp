@@ -156,7 +156,7 @@ Assignments tab is the alternate tab that displays all assignments :briefcase:. 
 
 </div>
 
-<font color="green"> === Now let us begin your wizardry journey as you acquire new spells to slay the work monsters :space_invader:. === </font>
+<font color="green">Now let us begin your wizardry journey as you acquire new spells to slay the work monsters :space_invader:.</font>
 
 ### Adding a volunteer: `add`
 
@@ -534,7 +534,7 @@ If your changes to the data file makes its format invalid, Match will discard al
 Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
-<font color="green"> === Congratulations you have mastered all the elements you are now a qualified wizard :mage:! === </font>
+<font color="green">Congratulations you have mastered all the elements you are now a qualified wizard :mage:!</font>
 
 ## FAQ
 
