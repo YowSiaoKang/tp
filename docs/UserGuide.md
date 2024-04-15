@@ -22,10 +22,16 @@ Key features include:
 - Volunteer Work Assignment
 
 ---
-- Table of Contents
+
+<div style="page-break-after: always;"></div>
+
+Table of Contents
 {:toc}
 
 ---
+
+<div style="page-break-after: always;"></div>
+
 ## Using this Guide
 
 This user guide (UG) is your companion in **unlocking the full potential** of Match. It’s here to help you understand the app and leverage its features to manage your volunteers like never before.
@@ -53,6 +59,8 @@ The following glossary clarifies commonly-used terminology:
 | Case-insensitive | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                           |
 | Contact card     | Box displaying each volunteer's details.                                                          |
 
+<div style="page-break-after: always;"></div>
+
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer for the magic to work :magic_wand:.
@@ -69,7 +77,7 @@ The following glossary clarifies commonly-used terminology:
     cd "C:\Users\John\My favourite location"
    java -jar match.jar
     ```
-5. **For Linux:penguin: /macOS:apple: users:**
+5. **For Linux:penguin: / macOS:apple: users:**
     1. Open up the search utility by pressing on the `Command` + `Space bar` key and type `Terminal`.
     2. Run `cd [JAR file location]` then run `java -jar match.jar` command to open up app.<br>
        Example:
@@ -199,7 +207,7 @@ What you should see:
 
 ### Editing a volunteer : `edit`
 
-Looks like someone changed their information, quick don't let the boss find out :fearful:. Use this to edit an existing volunteer in the volunteer contacts.
+Looks like someone changed their information, did they finally admit their phone number isn’t ‘12345678’? :relieved: Use this to edit an existing volunteer in the volunteer contacts.
 
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/AVAILABILITY]… [t/TAG]…​`
 - Edits the volunteer at the specified `INDEX`. The index refers to the index number shown in the displayed volunteer list. The index **must be a positive integer** 1, 2, 3, …​
@@ -418,7 +426,7 @@ Similar to removing availabilities, refresh will cascade delete all assignments 
 
 ### Copying emails : `copy`
 
-Remember the good ol `Ctrl` + `c`? Copies the email addresses of all volunteers in the currently filtered volunteer list to the clipboard.
+Remember the good old `Ctrl` + `c`? Copies the email addresses of all volunteers in the currently filtered volunteer list to the clipboard.
 
 Format: `copy`
 - The email addresses will be copied in a comma-separated format, e.g. `john@example.com, jane@example.com, ...`.
@@ -522,8 +530,6 @@ Furthermore, certain edits can cause the Match to behave in unexpected ways (e.g
 **A**: The problem is most likely that your JSON file is corrupted or edited. Be careful on not to edit your JSON file directly and only use commands to do so.You can solve this by manually adding your volunteers and assignments again.
 
 ---
-
-<div style="page-break-after: always;"></div>
 
 ## Known issues
 
