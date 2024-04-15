@@ -52,28 +52,31 @@ When using Match, you will encounter the symbols and terms explained below:
 
 The following glossary clarifies commonly-used terminology:
 
-| Terms                        | Meaning                                                                                                                                                                                                           |
+| Term                         | Meaning                                                                                                                                                                                                           |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Assignment                   | A volunteering assignment that has to be completed by the organization.                                                                                                                                           |
-| Availability                 | A data or multiple dates to indicate when the volunteer is available.                                                                                                                                             | 
+| Availability                 | A date or multiple dates to indicate when the volunteer is available.                                                                                                                                             | 
 | Case-insensitive             | Casing of alphabetic characters doesn't matter (e.g., “john” = “JOHN”).                                                                                                                                           |
 | Case-sensitive               | Casing of alphabetic characters matters (e.g., “add” ≠ “ADD”).                                                                                                                                                    |
 | Command Line Interface (CLI) | A text-based way to interact with Match.                                                                                                                                                                          |
 | Command                      | Input from the user telling Match to perform an action. See [Command Summary](#command-summary).                                                                                                                  |
+| Command Prompt               | The default terminal for Windows.                                                                                                                                                                                 |
 | Comma-separated values (CSV) | A text file format storage whereby each field is being separated by a comma.                                                                                                                                      |
 | Contact card                 | Box displaying each volunteer's details.                                                                                                                                                                          |
 | Entry                        | A collection of information. Typically displayed as a single row in Match GUI. `NAME`, `PHONE_NUMBER`, `EMAIL`, `AVAILABILITY` and `TAG` information forms a single entry, refer [here](#adding-a-volunteer-add). |
 | Field                        | Also commonly known as the columns of a table.                                                                                                                                                                    |
 | GUI                          | Graphical User Interface, the visual display of Match.                                                                                                                                                            |
 | GUI component                | Parts that make up the GUI. For details, refer to [Navigating the GUI](#navigating-the-gui).                                                                                                                      |
-| Parameter                    | A special kind of variable used to identify fields. E.g. `n/` is the parameter for the `NAME` field, refer [here](#adding-a-volunteer-add).                                                                       |
-| Prefix                       | Fields in a command to fill up, capturing important information.                                                                                                                                                  |
+| Java                         | The main programming language that is powering this magical software.                                                                                                                                             |
+| Parameter                    | Fields in a command to fill up, capturing important information.                                                                                                                                                  |
+| Prefix                       | A special kind of variable used to identify fields. E.g. `n/` is the parameter for the `NAME` field, refer [here](#adding-a-volunteer-add).                                                                       |
 | Tag                          | A keyword or term assigned to a piece of information to assist in identification.                                                                                                                                 |
+| Terminal                     | A CLI interpreter to execute commands that can perform tasks on a computer.                                                                                                                                       |
 | Volunteer                    | A person who is tasked to take on volunteering assignments.                                                                                                                                                       |       
 
 ## Quick start
 
-1. Ensure you have Java `11` or above installed in your Computer for the magic to work :magic_wand:.
+1. Ensure you have Java `11` or above installed in your computer for the magic to work :magic_wand:. Refer [here](https://www.java.com/en/download/help/download_options.html) on how to install Java.
 
 2. Download our latest `match.jar` from [here](https://github.com/AY2324S2-CS2103T-F10-4/tp/releases).
 
