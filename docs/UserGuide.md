@@ -295,7 +295,7 @@ Format: `find [n/NAME]… [a/AVAILABILITY]…`
 - The search is case-insensitive. e.g `hans` will match `Hans`
 - At least one of the optional fields must be provided.
 - The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-- Only full words will be matched e.g. `Han` will not match `Hans`
+- Partial words will be matched e.g. `Han` will match `Hans`
 - Volunteers matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
 
@@ -306,6 +306,7 @@ Examples:
 - `find n/alex n/david` returns `Alex Yeoh`, `David Li`
 - `find a/23/05/2024` returns volunteers who are available on `23/05/2024`
 - `find a/23/05/2024 a/24/05/2024` returns volunteers who are available on either `23/05/2024` or `24/05/2024`
+- `find n/alex a/23/05/2024` returns volunteers with `alex` in name or volunteers available on `a/23/05/2024`
 
 What you should see after `find n/John`:
 ![find](images/features/find.png)
